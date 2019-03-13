@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="JVM垃圾收集器知识总结"><meta name="keywords" content="Java,JVM"><meta name="author" content="Peiel"><meta name="copyright" content="Peiel"><title>JVM垃圾收集器知识总结 | Peiel's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3319301080572541',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21ffc9c30ac4263d2d53f327c885f71d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、垃圾收集算法"><span class="toc-number">1.</span> <span class="toc-text">一、垃圾收集算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#无垃圾回收-NO-GC"><span class="toc-number">1.1.</span> <span class="toc-text">无垃圾回收(NO-GC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用计数算法-Reference-Counting"><span class="toc-number">1.2.</span> <span class="toc-text">引用计数算法(Reference Counting)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标记清除算法-Mark-Sweep"><span class="toc-number">1.3.</span> <span class="toc-text">标记清除算法(Mark Sweep)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标记整理算法-Mark-Compact"><span class="toc-number">1.4.</span> <span class="toc-text">标记整理算法(Mark Compact)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制算法-Copying"><span class="toc-number">1.5.</span> <span class="toc-text">复制算法(Copying)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java垃圾收集器"><span class="toc-number">2.</span> <span class="toc-text">Java垃圾收集器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#年轻代中的垃圾收集器"><span class="toc-number">2.1.</span> <span class="toc-text">年轻代中的垃圾收集器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Serial收集器"><span class="toc-number">2.1.1.</span> <span class="toc-text">Serial收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ParNew收集器"><span class="toc-number">2.1.2.</span> <span class="toc-text">ParNew收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parallel-Scavenge收集器"><span class="toc-number">2.1.3.</span> <span class="toc-text">Parallel Scavenge收集器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#年老代"><span class="toc-number">2.2.</span> <span class="toc-text">年老代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Serial-Old收集器"><span class="toc-number">2.2.1.</span> <span class="toc-text">Serial Old收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parallel-Old收集器"><span class="toc-number">2.2.2.</span> <span class="toc-text">Parallel Old收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMS收集器"><span class="toc-number">2.2.3.</span> <span class="toc-text">CMS收集器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#remark"><span class="toc-number">3.</span> <span class="toc-text">remark</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Peiel</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/peierlong">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">74</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">50</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Peiel's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">JVM垃圾收集器知识总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-03-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/">Java</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><blockquote>
+<p>本文大部分的知识来自于周志明大神的<a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机（第2版）》</a>一书，系统学习JVM相关知识的强烈推荐。 </p>
+</blockquote>
+<h1 id="一、垃圾收集算法"><a href="#一、垃圾收集算法" class="headerlink" title="一、垃圾收集算法"></a>一、垃圾收集算法</h1><p>有关垃圾收集算法，有一个国外的大神用JS生成的动图直观的展示了垃圾回收的过程，有助于对垃圾收集算法的理解，这是文章<a href="https://spin.atomicobject.com/2014/09/03/visualizing-garbage-collection-algorithms/" target="_blank" rel="noopener">连接</a>。</p>
+<h2 id="无垃圾回收-NO-GC"><a href="#无垃圾回收-NO-GC" class="headerlink" title="无垃圾回收(NO-GC)"></a>无垃圾回收(NO-GC)</h2><p>在程序运行结束后，一次性的对内存进行回收，是最简单的回收机制。其并发性能最高，如果能把任务的颗粒度变得更细，可以有效的清理垃圾。最大的缺点是对长时间运行的程序或者占用内存大的程序来说，非常容易内存溢出。</p>
+<a id="more"></a>
+<h2 id="引用计数算法-Reference-Counting"><a href="#引用计数算法-Reference-Counting" class="headerlink" title="引用计数算法(Reference Counting)"></a>引用计数算法(Reference Counting)</h2><p>每个对象都持有一个引用的计数器，每当有一个地方引用它时，计数器就加一，当引用失效时，计数器就减一，当计数器为零时，说明对象是可被回收的。引用计数器最大的缺陷时循环引用问题。而且在并发情况下，引用计数器存在线程安全问题。</p>
+<h2 id="标记清除算法-Mark-Sweep"><a href="#标记清除算法-Mark-Sweep" class="headerlink" title="标记清除算法(Mark Sweep)"></a>标记清除算法(Mark Sweep)</h2><p>顾名思义，标记清除算法分为两个阶段，『标记』和『清除』。相对于引用计数算法，解决了循环引用的问题，并且开销要小，因为不需要维护计数器了。</p>
+<p>标记清除算法会产生内存碎片，从而导致大对象无法获取到连续的内存空间。并且，两个阶段的执行效率都不高。</p>
+<h2 id="标记整理算法-Mark-Compact"><a href="#标记整理算法-Mark-Compact" class="headerlink" title="标记整理算法(Mark Compact)"></a>标记整理算法(Mark Compact)</h2><p>标记整理算法是在标记清除算法的基础上进行改进的算法，标记过程和标记清除算法一下，标记后，会把所有对象向一端移动，然后清除其余内存。</p>
+<h2 id="复制算法-Copying"><a href="#复制算法-Copying" class="headerlink" title="复制算法(Copying)"></a>复制算法(Copying)</h2><p>复制算法在针对对象存活率较低的场景下有较高的效率，复制算法会降低空间成本。在Java虚拟机堆内存新生代非常适合使用这种算法。</p>
+<h1 id="Java垃圾收集器"><a href="#Java垃圾收集器" class="headerlink" title="Java垃圾收集器"></a>Java垃圾收集器</h1><p>Java垃圾收集器使用分代收集算法，由于垃圾收集主要集中在堆内存中，于是把堆分为”年轻代”和”年老代”，也把方法区在逻辑上称为”永久代”。年轻代中的对象存活时间较短，绝大部分垃圾收集器使用复制算法。年老代中对象存活时间较长，一般采用标记-清除或者标记-整理算法。下图为各个收集器是否</p>
+<p><img src="http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/gc_collector.jpg" alt="gc_collector.jpg"></p>
+<h2 id="年轻代中的垃圾收集器"><a href="#年轻代中的垃圾收集器" class="headerlink" title="年轻代中的垃圾收集器"></a>年轻代中的垃圾收集器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><ul>
+<li>采用复制算法实现</li>
+<li>单线程</li>
+<li>GC线程执行时，必须 Stop The World</li>
+</ul>
+<h3 id="ParNew收集器"><a href="#ParNew收集器" class="headerlink" title="ParNew收集器"></a>ParNew收集器</h3><ul>
+<li>采用复制算法实现</li>
+<li>多线程</li>
+<li>多条GC线程并行执行，用户线程必须 Stop The World</li>
+</ul>
+<h3 id="Parallel-Scavenge收集器"><a href="#Parallel-Scavenge收集器" class="headerlink" title="Parallel Scavenge收集器"></a>Parallel Scavenge收集器</h3><ul>
+<li>采用复制算法实现</li>
+<li>并行多线程收集器</li>
+<li>多条GC线程并行执行，用户线程必须 Stop The World</li>
+<li>其他收集器关注用户线程停顿时间，此收集器关注程序吞吐量。</li>
+</ul>
+<h2 id="年老代"><a href="#年老代" class="headerlink" title="年老代"></a>年老代</h2><h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><ul>
+<li>Serial Old收集器时Serial收集器的年老代版本</li>
+<li>单线程收集器</li>
+<li>标记-整理算法</li>
+<li>是CMS算法的后备方案</li>
+</ul>
+<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><ul>
+<li>Parallel Old是Parallel Scavenge收集器的老年代版本</li>
+<li>多线程收集器</li>
+<li>注重吞吐量以及CPU资源敏感场合，可以优先考虑Parallel Scavenge + Parallel Old的组合。</li>
+</ul>
+<h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><ul>
+<li>CMS(Concurrent Mark Sweep)收集器是一种以获取最短停顿时间目标的收集器。</li>
+<li>使用标记清除算法实现</li>
+<li>多线程</li>
+</ul>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>并发收集</li>
+<li>低停顿</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>CMS收集器对CPU资源非常敏感（回收线程数 (cpu数量 + 3)/4   所以CPU不足4个时，垃圾收集线程占用50% CPU资源 ）</li>
+<li>CMS收集器无法处理浮动垃圾(Floating Garbage)</li>
+<li>标记-清除算法带来的内存碎片处理</li>
+</ul>
+<p><strong>CMS过程：</strong></p>
+<p><img src="http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/CMS-Process.jpg" alt="CMS-Process.jpg"></p>
+<h1 id="remark"><a href="#remark" class="headerlink" title="remark"></a>remark</h1><p>由于G1收集器暂时使用并不主流，暂时不做过多的学习。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Peiel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://peierlong.com/2018/03/09/JVM垃圾收集器知识总结/">http://peierlong.com/2018/03/09/JVM垃圾收集器知识总结/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://peierlong.com">Peiel's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/JVM/">JVM</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/03/13/阿里云文件上传Python脚本-自动复制MarkDown语法的图片至粘贴板/"><i class="fa fa-chevron-left">  </i><span>阿里云文件上传Python脚本(自动复制MarkDown语法的图片至粘贴板)</span></a></div><div class="next-post pull-right"><a href="/2018/03/09/JVM内存模型总结/"><span>JVM内存模型简述</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a51705d33ae8738b8d50',
+  clientSecret: '1ead3cf5a29c450e1427b0246a864f99691fe31d',
+  repo: 'peierlong.github.io',
+  owner: 'peierlong',
+  admin: 'peierlong',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2019 By Peiel</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="www.peierlong.com">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

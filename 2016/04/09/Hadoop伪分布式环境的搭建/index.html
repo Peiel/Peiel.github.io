@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Hadoop伪分布式环境的搭建"><meta name="keywords" content="Hadoop"><meta name="author" content="Peiel"><meta name="copyright" content="Peiel"><title>Hadoop伪分布式环境的搭建 | Peiel's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3319301080572541',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21ffc9c30ac4263d2d53f327c885f71d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、Win下相关配置工作"><span class="toc-number">1.</span> <span class="toc-text">一、Win下相关配置工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Linux下相关配置工作"><span class="toc-number">2.</span> <span class="toc-text">二、Linux下相关配置工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hadoop2-4-1"><span class="toc-number">3.</span> <span class="toc-text">安装Hadoop2.4.1</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Peiel</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/peierlong">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">74</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">50</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Peiel's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">Hadoop伪分布式环境的搭建</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-04-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Linux/">Linux</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="一、Win下相关配置工作"><a href="#一、Win下相关配置工作" class="headerlink" title="一、Win下相关配置工作"></a>一、Win下相关配置工作</h3><ol>
+<li>安装虚拟机。</li>
+<li>导入CentOS虚拟机文件到虚拟机中。</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>配置CentOS网络适配器-&gt;<code>自定义</code>-&gt;<code>VMnet8(NAT模式)</code>。</p>
+</li>
+<li><p>虚拟机中 <code>编辑</code> -&gt; <code>虚拟网络编辑器</code></p>
+<blockquote>
+<p> 选择VMnet8，配置<code>子网IP</code>、<code>子网掩码</code>和<code>网关</code>。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="二、Linux下相关配置工作"><a href="#二、Linux下相关配置工作" class="headerlink" title="二、Linux下相关配置工作"></a>二、Linux下相关配置工作</h3><ol>
+<li><p>修改主机名<br>​    </p>
+<pre><code>vim /etc/sysconfig/network
+
+NETWORKING=yes
+HOSTNAME=&lt;hostname&gt;###
+</code></pre></li>
+<li><p>配置IP地址<br>​    </p>
+<pre><code>vim /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE=&quot;eth0&quot;
+BOOTPROTO=&quot;static&quot;               ###
+HWADDR=&quot;00:0C:29:3C:BF:E7&quot;
+IPV6INIT=&quot;yes&quot;
+NM_CONTROLLED=&quot;yes&quot;
+ONBOOT=&quot;yes&quot;
+TYPE=&quot;Ethernet&quot;
+UUID=&quot;ce22eeca-ecde-4536-8cc2-ef0dc36d4a8c&quot;
+IPADDR=&quot;192.168.1.101&quot;           ###
+NETMASK=&quot;255.255.255.0&quot;          ###
+GATEWAY=&quot;192.168.1.1&quot;            ###
+</code></pre></li>
+<li><p>修改主机名和IP的映射关系</p>
+<pre><code>vim /etc/hosts
+
+192.168.1.101    &lt;hostname&gt;
+</code></pre></li>
+<li><p>关闭防火墙</p>
+<pre><code>#查看防火墙状态
+ service iptables status
+ #关闭防火墙
+ service iptables stop
+ #查看防火墙开机启动状态
+ chkconfig iptables --list
+ #关闭防火墙开机启动
+ chkconfig iptables off
+</code></pre></li>
+<li><p>安装JDK</p>
+</li>
+</ol>
+<p>解压到恰当目录后，配置JDK环境变量。<br>        vim /etc/profile</p>
+<pre><code>#在文件最后添加
+export JAVA_HOME= ***
+export PATH=$PATH:$JAVA_HOME/bin
+</code></pre><p>使配置文件生效 <code>source /***/***</code><br>重启网络服务的命令 <code>service network restart</code></p>
+<h3 id="安装Hadoop2-4-1"><a href="#安装Hadoop2-4-1" class="headerlink" title="安装Hadoop2.4.1"></a>安装Hadoop2.4.1</h3><ol>
+<li><p>上传hadoop安装包到服务器</p>
+<p>注：hadoop2.x 的配置文件<code>$HADOOP_HOME/etc/hadoop</code></p>
+</li>
+<li><p>配置hadoop</p>
+<p>第一个：hadoop-env.sh</p>
+<pre><code>vim hadoop-env.sh
+#第27行
+export JAVA_HOME=/usr/java/jdk1.7.0_65
+</code></pre><p>第二个：core-site.xml</p>
+<pre><code>&lt;!-- 指定HADOOP所使用的文件系统schema（URI），HDFS的老大（NameNode）的地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://weekend-1206-01:9000&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 指定hadoop运行时产生文件的存储目录 --&gt;
+&lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/home/hadoop/hadoop-2.4.1/tmp&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre><p>第三个：hdfs-site.xml</p>
+<pre><code>&lt;!-- 指定HDFS副本的数量 --&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;1&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre><p>第四个：mapred-site.xml</p>
+<pre><code>mv mapred-site.xml.template mapred-site.xml
+vim mapred-site.xml
+&lt;!-- 指定mr运行在yarn上 --&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+    &lt;value&gt;yarn&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre><p>第五个：yarn-site.xml</p>
+<pre><code>&lt;!-- 指定YARN的老大（ResourceManager）的地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+    &lt;value&gt;weekend-1206-01&lt;/value&gt;
+ &lt;/property&gt;
+&lt;!-- reducer获取数据的方式 --&gt;
+ &lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+  &lt;/property&gt;
+</code></pre></li>
+<li><p>将hadoop添加到环境变量中</p>
+</li>
+<li><p>格式化namenode（是对namenode进行初始化）</p>
+<pre><code>hdfs namenode -format (hadoop namenode -format)
+</code></pre></li>
+<li><p>启动hadoop</p>
+<p>先启动HDFS</p>
+<pre><code>sbin/start-dfs.sh
+</code></pre><p>再启动YARN</p>
+<pre><code>sbin/start-yarn.sh
+</code></pre></li>
+<li><p>验证是否启动成功</p>
+<p>使用jps命令验证</p>
+<pre><code>23615 NameNode
+16235 Jps
+..... SecondaryNameNode
+..... NodeManager
+..... ResourceManager
+..... DataNode
+</code></pre><p>HDFS管理界面： `<a href="http://hostname:50070" target="_blank" rel="noopener">http://hostname:50070</a></p>
+<p>MR管理界面： `<a href="http://hostname:8080" target="_blank" rel="noopener">http://hostname:8080</a><br>​    </p>
+</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Peiel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://peierlong.com/2016/04/09/Hadoop伪分布式环境的搭建/">http://peierlong.com/2016/04/09/Hadoop伪分布式环境的搭建/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://peierlong.com">Peiel's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hadoop/">Hadoop</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/07/09/异常的使用场景/"><i class="fa fa-chevron-left">  </i><span>异常的使用场景</span></a></div><div class="next-post pull-right"><a href="/2015/11/24/Linux下命令行编辑相关快捷键/"><span>Linux下命令行编辑相关快捷键</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a51705d33ae8738b8d50',
+  clientSecret: '1ead3cf5a29c450e1427b0246a864f99691fe31d',
+  repo: 'peierlong.github.io',
+  owner: 'peierlong',
+  admin: 'peierlong',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2019 By Peiel</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="www.peierlong.com">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Redis常用命令汇总"><meta name="keywords" content="Redis,缓存"><meta name="author" content="Peiel"><meta name="copyright" content="Peiel"><title>Redis常用命令汇总 | Peiel's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3319301080572541',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21ffc9c30ac4263d2d53f327c885f71d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#连接操作相关的命令"><span class="toc-number">1.</span> <span class="toc-text">连接操作相关的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端相关命令"><span class="toc-number">2.</span> <span class="toc-text">服务端相关命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对KEY操作的命令"><span class="toc-number">3.</span> <span class="toc-text">对KEY操作的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对String操作的命令"><span class="toc-number">4.</span> <span class="toc-text">对String操作的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对List操作的命令"><span class="toc-number">5.</span> <span class="toc-text">对List操作的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对Set操作的命令"><span class="toc-number">6.</span> <span class="toc-text">对Set操作的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对Hash操作的命令"><span class="toc-number">7.</span> <span class="toc-text">对Hash操作的命令</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Peiel</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/peierlong">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">74</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">50</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Peiel's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">Redis常用命令汇总</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-04-08</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Redis/">Redis</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="连接操作相关的命令"><a href="#连接操作相关的命令" class="headerlink" title="连接操作相关的命令"></a>连接操作相关的命令</h3><ul>
+<li>默认直接连接  远程连接-h 192.168.1.20 -p 6379</li>
+<li>ping：测试连接是否存活如果正常会返回pong</li>
+<li>echo：打印</li>
+<li>select：切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值</li>
+<li>quit：关闭连接（connection）</li>
+<li>auth：简单密码认证</li>
+</ul>
+<h3 id="服务端相关命令"><a href="#服务端相关命令" class="headerlink" title="服务端相关命令"></a>服务端相关命令</h3><ul>
+<li>time：返回当前服务器时间</li>
+<li>client list: 返回所有连接到服务器的客户端信息和统计数据  参见<a href="http://redisdoc.com/server/client_list.html" target="_blank" rel="noopener">http://redisdoc.com/server/client_list.html</a></li>
+<li>client kill ip:port：关闭地址为 ip:port 的客户端</li>
+<li>save：将数据同步保存到磁盘</li>
+<li>bgsave：将数据异步保存到磁盘</li>
+<li>lastsave：返回上次成功将数据保存到磁盘的Unix时戳</li>
+<li>shundown：将数据同步保存到磁盘，然后关闭服务</li>
+<li>info：提供服务器的信息和统计</li>
+<li>config resetstat：重置info命令中的某些统计数据</li>
+<li>config get：获取配置文件信息</li>
+<li>config set：动态地调整 Redis 服务器的配置(configuration)而无须重启，可以修改的配置参数可以使用命令 CONFIG GET * 来列出</li>
+<li>config rewrite：Redis 服务器时所指定的 redis.conf 文件进行改写</li>
+<li>monitor：实时转储收到的请求</li>
+<li><p>slaveof：改变复制策略设置<br>发布订阅相关命令</p>
+</li>
+<li><p>psubscribe：订阅一个或多个符合给定模式的频道 例如psubscribe news.<em> tweet.</em></p>
+</li>
+<li>publish：将信息 message 发送到指定的频道 channel 例如publish msg “good morning”</li>
+<li>pubsub channels：列出当前的活跃频道 例如PUBSUB CHANNELS news.i*</li>
+<li>pubsub numsub：返回给定频道的订阅者数量 例如PUBSUB NUMSUB news.it news.internet news.sport news.music</li>
+<li>pubsub numpat：返回客户端订阅的所有模式的数量总和</li>
+<li>punsubscribe：指示客户端退订所有给定模式。</li>
+<li>subscribe：订阅给定的一个或多个频道的信息。例如 subscribe msg chat_room</li>
+<li>unsubscribe：指示客户端退订给定的频道。</li>
+</ul>
+<h3 id="对KEY操作的命令"><a href="#对KEY操作的命令" class="headerlink" title="对KEY操作的命令"></a>对KEY操作的命令</h3><ul>
+<li>exists(key)：确认一个key是否存在</li>
+<li>del(key)：删除一个key</li>
+<li>type(key)：返回值的类型</li>
+<li>keys(pattern)：返回满足给定pattern的所有key</li>
+<li>randomkey：随机返回key空间的一个</li>
+<li>keyrename(oldname, newname)：重命名key</li>
+<li>dbsize：返回当前数据库中key的数目</li>
+<li>expire：设定一个key的活动时间（s）</li>
+<li>ttl：获得一个key的活动时间</li>
+<li>move(key, dbindex)：移动当前数据库中的key到dbindex数据库</li>
+<li>flushdb：删除当前选择数据库中的所有key</li>
+<li>flushall：删除所有数据库中的所有key</li>
+</ul>
+<h3 id="对String操作的命令"><a href="#对String操作的命令" class="headerlink" title="对String操作的命令"></a>对String操作的命令</h3><ul>
+<li>set(key, value)：给数据库中名称为key的string赋予值value</li>
+<li>strlen key : 查询名称为key的string的长度</li>
+<li>get(key)：返回数据库中名称为key的string的value</li>
+<li>getset(key, value)：给名称为key的string赋予上一次的value</li>
+<li>mget(key1, key2,…, key N)：返回库中多个string的value</li>
+<li>setnx(key, value)：添加string，名称为key，值为value</li>
+<li>setex(key, time, value)：向库中添加string，设定过期时间time</li>
+<li>mset(key N, value N)：批量设置多个string的值</li>
+<li>msetnx(key N, value N)：如果所有名称为key i的string都不存在</li>
+<li>incr(key)：名称为key的string增1操作</li>
+<li>incrby(key, integer)：名称为key的string增加integer</li>
+<li>decr(key)：名称为key的string减1操作</li>
+<li>decrby(key, integer)：名称为key的string减少integer</li>
+<li>append(key, value)：名称为key的string的值附加value</li>
+<li>substr(key, start, end)：返回名称为key的string的value的子串</li>
+</ul>
+<h3 id="对List操作的命令"><a href="#对List操作的命令" class="headerlink" title="对List操作的命令"></a>对List操作的命令</h3><ul>
+<li>rpush(key, value)：在名称为key的list尾添加一个值为value的元素</li>
+<li>lpush(key, value)：在名称为key的list头添加一个值为value的 元素</li>
+<li>llen(key)：返回名称为key的list的长度</li>
+<li>lrange(key, start, end)：返回名称为key的list中start至end之间的元素</li>
+<li>ltrim(key, start, end)：截取名称为key的list</li>
+<li>lindex(key, index)：返回名称为key的list中index位置的元素</li>
+<li>lset(key, index, value)：给名称为key的list中index位置的元素赋值</li>
+<li>lrem(key, count, value)：删除count个key的list中值为value的元素</li>
+<li>lpop(key)：返回并删除名称为key的list中的首元素</li>
+<li>rpop(key)：返回并删除名称为key的list中的尾元素</li>
+<li>blpop(key1, key2,… key N, timeout)：lpop命令的block版本。</li>
+<li>brpop(key1, key2,… key N, timeout)：rpop的block版本。</li>
+<li>rpoplpush(srckey, dstkey)：返回并删除名称为srckey的list的尾元素，并将该元素添加到名称为dstkey的list的头部</li>
+</ul>
+<h3 id="对Set操作的命令"><a href="#对Set操作的命令" class="headerlink" title="对Set操作的命令"></a>对Set操作的命令</h3><ul>
+<li>sadd(key, member)：向名称为key的set中添加元素member</li>
+<li>srem(key, member) ：删除名称为key的set中的元素member</li>
+<li>spop(key) ：随机返回并删除名称为key的set中一个元素</li>
+<li>smove(srckey, dstkey, member) ：移到集合元素</li>
+<li>scard(key) ：返回名称为key的set的基数</li>
+<li>sismember(key, member) ：member是否是名称为key的set的元素</li>
+<li>sinter(key1, key2,…key N) ：求交集</li>
+<li>sinterstore(dstkey, (keys)) ：求交集并将交集保存到dstkey的集合</li>
+<li>sunion(key1, (keys)) ：求并集</li>
+<li>sunionstore(dstkey, (keys)) ：求并集并将并集保存到dstkey的集合</li>
+<li>sdiff(key1, (keys)) ：求差集</li>
+<li>sdiffstore(dstkey, (keys)) ：求差集并将差集保存到dstkey的集合</li>
+<li>smembers(key) ：返回名称为key的set的所有元素</li>
+<li>srandmember(key) ：随机返回名称为key的set的一个元素</li>
+</ul>
+<h3 id="对Hash操作的命令"><a href="#对Hash操作的命令" class="headerlink" title="对Hash操作的命令"></a>对Hash操作的命令</h3><ul>
+<li>hset(key, field, value)：向名称为key的hash中添加元素field</li>
+<li>hget(key, field)：返回名称为key的hash中field对应的value</li>
+<li>hmget(key, (fields))：返回名称为key的hash中field i对应的value</li>
+<li>hmset(key, (fields))：向名称为key的hash中添加元素field</li>
+<li>hincrby(key, field, integer)：将名称为key的hash中field的value增加integer</li>
+<li>hexists(key, field)：名称为key的hash中是否存在键为field的域</li>
+<li>hdel(key, field)：删除名称为key的hash中键为field的域</li>
+<li>hlen(key)：返回名称为key的hash中元素个数</li>
+<li>hkeys(key)：返回名称为key的hash中所有键</li>
+<li>hvals(key)：返回名称为key的hash中所有键对应的value</li>
+<li>hgetall(key)：返回名称为key的hash中所有的键（field）及其对应的value</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Peiel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://peierlong.com/2017/04/08/Redis常用命令/">http://peierlong.com/2017/04/08/Redis常用命令/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://peierlong.com">Peiel's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Redis/">Redis</a><a class="post-meta__tags" href="/tags/缓存/">缓存</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2017/04/08/Docker命令汇总-上/"><i class="fa fa-chevron-left">  </i><span>Docker命令汇总-上</span></a></div><div class="next-post pull-right"><a href="/2017/03/27/Zookeeper序列化机制总结/"><span>Zookeeper序列化机制总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a51705d33ae8738b8d50',
+  clientSecret: '1ead3cf5a29c450e1427b0246a864f99691fe31d',
+  repo: 'peierlong.github.io',
+  owner: 'peierlong',
+  admin: 'peierlong',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2019 By Peiel</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="www.peierlong.com">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

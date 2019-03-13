@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="《Clean Code》味道与启发阅读总结"><meta name="keywords" content="Java,Refactoring"><meta name="author" content="Peiel"><meta name="copyright" content="Peiel"><title>《Clean Code》味道与启发阅读总结 | Peiel's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3319301080572541',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21ffc9c30ac4263d2d53f327c885f71d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-注释"><span class="toc-number">1.</span> <span class="toc-text">1. 注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-环境"><span class="toc-number">2.</span> <span class="toc-text">2. 环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-函数"><span class="toc-number">3.</span> <span class="toc-text">3. 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-一般性问题"><span class="toc-number">4.</span> <span class="toc-text">4. 一般性问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-关于Java的建议"><span class="toc-number">5.</span> <span class="toc-text">5. 关于Java的建议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-名称"><span class="toc-number">6.</span> <span class="toc-text">6. 名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-测试"><span class="toc-number">7.</span> <span class="toc-text">7. 测试</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Peiel</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/peierlong">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">74</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">50</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Peiel's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">《Clean Code》味道与启发阅读总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-12-20</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/读书/">读书</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h4 id="1-注释"><a href="#1-注释" class="headerlink" title="1. 注释"></a>1. 注释</h4><ul>
+<li><p>不恰当的信息</p>
+<p>注释只应该描述相关代码和设计的技术性信息。</p>
+</li>
+<li><p>废弃的注释</p>
+<p>过时，无关或不正确的注释就是废弃的注释。</p>
+<a id="more"></a>
+</li>
+<li><p>冗余注释</p>
+<p>如果注释描述的是某种充分自我描述的东西，那么注释就是多余的。</p>
+<p>例如： i++;   // i自加1</p>
+</li>
+<li><p>糟糕的注释</p>
+<p>注释要好好写，花时间保证写出最好的注释，使用正确的语法和拼写，不要说多余的话。</p>
+</li>
+<li><p>注释掉的代码</p>
+<p>注释掉的代码影响整体的代码的可读性，应该讲起删掉，<code>Git</code>会记住它。</p>
+</li>
+</ul>
+<h4 id="2-环境"><a href="#2-环境" class="headerlink" title="2. 环境"></a>2. 环境</h4><ul>
+<li><p>使用多步才能实现的构建</p>
+<p>应当使用单个命令来检出系统，并用单个指令构建它，而不是一点一点的检出，寻找额外的配置文件或依赖包。</p>
+</li>
+<li><p>需要多步才能做到的测试</p>
+<p>应当能够使用单个指令就可以运行全部的单元测试。</p>
+</li>
+</ul>
+<h4 id="3-函数"><a href="#3-函数" class="headerlink" title="3. 函数"></a>3. 函数</h4><ul>
+<li><p>过多的参数</p>
+<p>函数的参数数量应该少，没参数最好，一个次之。三个以上应该避免。</p>
+</li>
+<li><p>输出参数</p>
+<p>输出参数违背直觉，读者期望参数用于输入而非输出，如果要修改状态，应该它所在对象的状态即可。</p>
+</li>
+<li><p>标识参数</p>
+<p>布尔值参数宣告参数做了不止一件事。他们让人迷惑，应该处理掉。</p>
+</li>
+<li><p>死函数</p>
+<p>永不调用的函数应该删掉，保留死代码没有一点必要，<code>Git</code>会帮你保存下来。</p>
+</li>
+</ul>
+<h4 id="4-一般性问题"><a href="#4-一般性问题" class="headerlink" title="4. 一般性问题"></a>4. 一般性问题</h4><ul>
+<li><p>一个源文件中存在多个语言</p>
+<p>理想的源文件包括而且只包括一种语言。但是现实中，我们可能会不得不使用多于一种语言。但应该尽力减少源文件中额外语言的数量和范围。</p>
+</li>
+<li><p>明显的行为未被实现</p>
+<p>遵循“最小惊异原则”（The Principle of Least Surprise），函数或类应该实现其他程序员期待的行为。</p>
+</li>
+<li><p>不正确的边界行为</p>
+<p>代码应该有正确的行为，每种边界条件、每种极端情形、每个异常都代表了某种可能扰乱优雅的代码，别依赖直觉，追溯每种边界条件，并编写测试。</p>
+</li>
+<li><p>忽视安全问题</p>
+<p>不要忽略代码中的各种警告，如果不重视安全，它会影响程序的稳定运行，一时的构建成功并不代表代码不会出问题。</p>
+</li>
+<li><p>代码重复问题</p>
+<p>Kent Beck将它列为极限编程的核心原则之一，并称之为“一次，也只一次”。面对重复的代码，可以使用模板方法模式和策略模式来修正它。</p>
+</li>
+<li><p>在错误的抽象层级上的代码</p>
+<p>良好的软件设计要求分离位于不同层级的概念，将它们放置在不同的容器中。</p>
+</li>
+<li><p>基类依赖于派生类</p>
+<p>通常来讲，基类应该对派生类一无所知。将基类的派生类部署到不同的jar文件中，确保基类jar文件对派生类jar文件一无所知，我们就能把系统部署为分散和独立的组件。</p>
+</li>
+<li><p>信息过多</p>
+<p>设计良好的模块有着非常小的接口，让你能事半功倍。设计良好的接口具有少量的依赖，所以耦合度较低。不要创建拥有大量方法和大量实体变量的类。不要为子类创建大量受保护的变量和函数。尽力保持接口紧凑。通过限制信息来控制耦合度。</p>
+</li>
+<li><p>死代码</p>
+<p>死代码的问题是过不了多久，他就产生了负面的影响，时间越久，受到的影响就越大。每当遇到死代码的时候，就将它从代码中删除。</p>
+</li>
+<li><p>垂直分隔</p>
+<p>变量和函数应该在靠近被使用的地方定义。本地变量应该正好在其首次被使用的位置上面声明，垂直距离要远。</p>
+</li>
+<li><p>前后不一致</p>
+<p>前后一致的命名，前后一致的代码格式，更加能提高代码的可读性。</p>
+</li>
+<li><p>混淆代码</p>
+<p>没有用到的变量，从不调用的函数，没有信息量的注释等都属于混淆代码，都应该删除。保持代码的整洁，良好的组织，才能不会被搞乱。</p>
+</li>
+<li><p>人为耦合</p>
+<p>不互相依赖的东西不应该耦合。一般来讲，人为耦合是指两个没有直接目的之间的模块的耦合，其根源是讲变量、常量或函数不恰当的放在临时方便的位置。</p>
+</li>
+<li><p>特性依赖</p>
+</li>
+<li><p>晦涩的意图</p>
+<p>代码要尽可能具有表达力。</p>
+</li>
+<li><p>位置错误的权责</p>
+<p>程序员做出的最重要决定之一就是代码放在那里。最小惊异原则在这里就起到作用了。代码应该放在读者自然而然期待它所在的地方。做出这个决定的的途径之一就是看函数名称。</p>
+</li>
+<li><p>不恰当的静态方法</p>
+<p>通常应该倾向于选用非静态方法。如果需要使用静态函数，应该确保其不打算有多态性为。</p>
+</li>
+<li><p>使用解释型变量</p>
+<p>让程序可读的最有力方法之一就是将计算过程打散成有意义的命名的中间值（来自《设计模式》一书）。解释型变量多比少好。只要把计算过程打散成一系列良好命名的中间值，不透明的模块就会突然变的透明，这很值得注意。</p>
+</li>
+<li><p>函数名称应该表达其行为</p>
+<p>如果你必须查看函数的实现(或文档)才能知道它是做什么的，就应该换个更好的函数名，或者重新安排功能代码，放到有较好名称的函数中。</p>
+</li>
+<li><p>应该把逻辑依赖改为物理依赖</p>
+</li>
+<li><p>用多态代替if/else或switch/case</p>
+<p>使用switch之前，应该考虑使用多态。其次，函数变化胜于类型变化的情形相对罕见，每个switch语句都值得怀疑。对于给定的选择类型，不应有多于一个switch语句。在那个switch语句中的多个case，必须创建多态对象，取代系统中其他类似switch语句。</p>
+</li>
+<li><p>遵循标准约定</p>
+<p>每个团队中都应有遵循基于行业代码规范的一套标准。供团队开发人员遵循。</p>
+</li>
+<li><p>用命名常量替代代码中的魔术数。</p>
+</li>
+<li><p>准确</p>
+<p>代码中的含糊和不准确要么是意见不同的结果，要么源于懒惰。不管什么原因，都要消除。</p>
+</li>
+<li><p>结构胜于约定</p>
+<p>坚守结构胜于约定的设计决策。命名约定很好，但却次于强制性的结构。例如，用到良好命名的枚举的switch/case要弱于拥有抽象方法的基类。</p>
+</li>
+<li><p>封装条件</p>
+<p>如果没有if和while语句的上下文，布尔逻辑就难以理解。应该把解释了条件意图的函数抽离出来。</p>
+</li>
+<li><p>避免否定式条件</p>
+<p>否定式条件比肯定式难明白一些。所以，尽可能将条件表示为肯定形式。</p>
+</li>
+<li><p>函数只该做一件事情</p>
+<p>编写执行一系列操作的多段代码是令人头痛的，这类函数做了不只一件事儿，应该转换为多个更小的函数，每个只做一件事儿。</p>
+</li>
+<li><p>保证时序耦合</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reason)</span></span>&#123;</span><br><span class="line">  saturateGradient();</span><br><span class="line">  reticulateSplines();</span><br><span class="line">  diveForMoog(reason);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序员可以在调用saturateGradient()函数之前调用reticulateSplines()函数,从而导致抛出异常.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reason)</span></span>&#123;</span><br><span class="line">  Gradient gradient = saturateGradient();</span><br><span class="line">  List&lt;Spline&gt; splines = reticulateSplines(gradient);</span><br><span class="line">  diveForMoog(splines, reason);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改进后的版本保证了时序耦合。</p>
+</li>
+<li><p>封装边界条件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(level + <span class="number">1</span> &lt; tags.length)&#123;</span><br><span class="line">  parts = <span class="keyword">new</span> Parts(body, tags, level + <span class="number">1</span>, offset + endTag);</span><br><span class="line">  body = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码出现了两次level + 1，这个应该封装到名为nextLevel的变量中的边界条件.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nextLevel = level + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(nextLevel &lt; tags.length)&#123;</span><br><span class="line">  parts = <span class="keyword">new</span> Parts(body, tags, nextLevel, offset + endTag);</span><br><span class="line">  body = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在较高层级放置可配置数据</p>
+<p>位于较高层级的配置型常量易于修改。它们向下贯穿应用程序。应用程序的较低层级并不拥有这些常量的值。</p>
+</li>
+</ul>
+<h4 id="5-关于Java的建议"><a href="#5-关于Java的建议" class="headerlink" title="5. 关于Java的建议"></a>5. 关于Java的建议</h4><ul>
+<li><p>不要继承常量</p>
+<p>不要使用继承机构来导入常量，应该使用静态导入来导入常量。</p>
+</li>
+<li><p>常量 vs 枚举</p>
+<p>不要再用<code>public static final int</code>旧方式定义常量，应该使用<code>enum</code>来定义类型常量。<code>enum</code>具有更高的灵活性。</p>
+</li>
+</ul>
+<h4 id="6-名称"><a href="#6-名称" class="headerlink" title="6. 名称"></a>6. 名称</h4><ul>
+<li><p>采用描述性名称</p>
+</li>
+<li><p>名称与抽象层级相符</p>
+</li>
+<li><p>尽可能使用标准命名法</p>
+</li>
+<li><p>无歧义的名称</p>
+</li>
+<li><p>为较大作用范围选用较长名称</p>
+</li>
+<li><p>避免编码(如: <code>m_</code> <code>f_</code> <code>vis_</code>等)</p>
+</li>
+<li><p>名称应该说明副作用</p>
+<p>名称应该说明函数、变量或类的一切信息。</p>
+</li>
+</ul>
+<h4 id="7-测试"><a href="#7-测试" class="headerlink" title="7. 测试"></a>7. 测试</h4><ul>
+<li>测试不足</li>
+<li>使用覆盖率工具</li>
+<li>别略过小测试</li>
+<li>被忽略的测试就是对不确定事物的疑问</li>
+<li>测试边界条件</li>
+<li>全面测试相近的缺陷</li>
+<li>测试失败的模式有启发性</li>
+<li>测试覆盖率的模式有启发性</li>
+<li>测试应该快速</li>
+</ul>
+<p><strong>转载请注明出处：</strong></p>
+<p><a href="http://www.peierlong.com/2016/12/08/Effective%20Java%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" target="_blank" rel="noopener">http://www.peierlong.com/2016/12/08/Effective%20Java%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Peiel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://peierlong.com/2016/12/20/《Clean-Code》第17章-味道与启发阅读总结/">http://peierlong.com/2016/12/20/《Clean-Code》第17章-味道与启发阅读总结/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://peierlong.com">Peiel's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Refactoring/">Refactoring</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/12/29/构建高效的、可伸缩的结果缓存/"><i class="fa fa-chevron-left">  </i><span>构建高效的、可伸缩的结果缓存</span></a></div><div class="next-post pull-right"><a href="/2016/12/08/Effective Java思维导图/"><span>Effective Java思维导图</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a51705d33ae8738b8d50',
+  clientSecret: '1ead3cf5a29c450e1427b0246a864f99691fe31d',
+  repo: 'peierlong.github.io',
+  owner: 'peierlong',
+  admin: 'peierlong',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2019 By Peiel</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="www.peierlong.com">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Linux下命令行编辑相关快捷键"><meta name="keywords" content="命令,效率"><meta name="author" content="Peiel"><meta name="copyright" content="Peiel"><title>Linux下命令行编辑相关快捷键 | Peiel's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3319301080572541',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21ffc9c30ac4263d2d53f327c885f71d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Peiel</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/peierlong">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">74</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">50</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Peiel's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">Linux下命令行编辑相关快捷键</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2015-11-24</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Linux/">Linux</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>熟悉以下这些命令，一定会有的效(bi)率(ge)的提升。<br><a id="more"></a></p>
+<ol>
+<li><code>history</code> 显示命令历史列表</li>
+<li><code>↑(Ctrl+p)</code> 显示上一条命令</li>
+<li><code>↓(Ctrl+n)</code> 显示下一条命令</li>
+<li><code>!num</code> 执行命令历史列表的第num条命令</li>
+<li><code>!!</code> 执行上一条命令</li>
+<li><code>!?string?</code> 执行含有string字符串的最新命令</li>
+<li><code>Ctrl+r</code> 然后输入若干字符，开始向上搜索包含该字符的命令，继续按    Ctrl+r，搜索上一条匹配的命令</li>
+<li><code>Ctrl+s</code> 与<code>Ctrl+r</code>类似,只是正向检索</li>
+<li><code>Alt+&lt;</code> 历史列表第一项</li>
+<li><code>Alt+&gt;</code> 历史列表最后一项</li>
+<li><code>Ctrl+f</code> 光标向前移动一个字符,相当与-&gt;</li>
+<li><code>Ctrl+b</code> 光标向后移动一个字符,相当与&lt;-</li>
+<li><code>Alt+f</code> 光标向前移动一个单词</li>
+<li><code>Alt+b</code> 光标向后移动一个单词</li>
+<li><code>ls !$</code> 执行命令ls，并以上一条命令的参数为其参数</li>
+<li><code>Ctrl+a</code> 移动到当前行的开头</li>
+<li><code>Ctrl+e</code> 移动到当前行的结尾</li>
+<li><code>Esc+b</code> 移动到当前单词的开头</li>
+<li><code>Esc+f</code> 移动到当前单词的结尾</li>
+<li><code>Ctrl+l</code> 清屏</li>
+<li><code>Ctrl+u</code> 剪切命令行中光标所在处之前的所有字符(不包括自身)</li>
+<li><code>Ctrl+k</code> 剪切命令行中光标所在处之后的所有字符(包括自身)</li>
+<li><code>Ctrl+d</code> 删除光标所在处字符</li>
+<li><code>Ctrl+h</code> 删除光标所在处前一个字符</li>
+<li><code>Ctrl+y</code> 粘贴刚才所删除的字符</li>
+<li><code>Ctrl+w</code> 剪切光标所在处之前的一个词(以空格、标点等为分隔符)</li>
+<li><code>Alt+d</code> 剪切光标之后的词</li>
+<li><code>Esc+w</code> 删除光标所在处之前的字符至其单词尾(以空格、标点等为分隔符)</li>
+<li><code>Ctrl+t</code> 颠倒光标所在处及其之前的字符位置，并将光标移动到下一个字符</li>
+<li><code>Alt+t</code> 交换当前与以前单词的位置</li>
+<li><code>Alt+u</code> 把当前词转化为大写</li>
+<li><code>Alt+l</code> 把当前词转化为小</li>
+<li><code>Alt+c</code> 把当前词汇变成首字符大写</li>
+<li><code>Ctrl+v</code> 插入特殊字符,如Ctrl+v+Tab加入Tab字符键</li>
+<li><code>Esc+t</code> 颠倒光标所在处及其相邻单词的位置</li>
+<li><code>Ctrl+c</code> 删除整行</li>
+<li><code>Ctrl+(x u)</code> 按住Ctrl的同时再先后按x和u，撤销刚才的操作</li>
+<li><code>Ctrl+s</code> 挂起当前shell</li>
+<li><code>Ctrl+q</code> 重新启用挂起的shell</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Peiel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://peierlong.com/2015/11/24/Linux下命令行编辑相关快捷键/">http://peierlong.com/2015/11/24/Linux下命令行编辑相关快捷键/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://peierlong.com">Peiel's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/命令/">命令</a><a class="post-meta__tags" href="/tags/效率/">效率</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2016/04/09/Hadoop伪分布式环境的搭建/"><i class="fa fa-chevron-left">  </i><span>Hadoop伪分布式环境的搭建</span></a></div><div class="next-post pull-right"><a href="/2015/11/24/Git Commit提交报错/"><span>Git Commit提交报错</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a51705d33ae8738b8d50',
+  clientSecret: '1ead3cf5a29c450e1427b0246a864f99691fe31d',
+  repo: 'peierlong.github.io',
+  owner: 'peierlong',
+  admin: 'peierlong',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/home.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2015 - 2019 By Peiel</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="www.peierlong.com">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
