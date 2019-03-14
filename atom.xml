@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://peierlong.com/"/>
-  <updated>2019-03-13T03:20:13.236Z</updated>
+  <updated>2019-03-13T02:32:01.040Z</updated>
   <id>http://peierlong.com/</id>
   
   <author>
@@ -15,38 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://peierlong.com/2019/03/13/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
-    <id>http://peierlong.com/2019/03/13/我的书单/</id>
-    <published>2019-03-13T02:32:01.043Z</published>
-    <updated>2019-03-13T03:20:13.236Z</updated>
-    
-    <content type="html"><![CDATA[<p>—<br>title: My Book List<br>date: 2017-05-31 14:34:06<br>tags: 书单<br>categories:</p><pre><code>- 读书</code></pre><hr><h2 id="语言相关"><a href="#语言相关" class="headerlink" title="语言相关"></a>语言相关</h2><ul><li>《Java编程思想》</li><li>《深入理解JVM》★★★★★</li><li>《Java 并发编程实战》★★★★★</li><li>《深入理解Java虚拟机》★★★★★</li><li>《Effective Java》★★★★★</li><li>《Head First Python》</li><li>《C程序设计语言(第二版新版)》</li><li>《汇编语言(第三版)》</li><li>《深入分析Java Web技术内幕》</li><li>《Java并发编程的艺术》★★★★☆</li></ul><a id="more"></a><h2 id="计算机基础与网络"><a href="#计算机基础与网络" class="headerlink" title="计算机基础与网络"></a>计算机基础与网络</h2><ul><li>《深入理解计算机系统》</li><li><a href="http://book.douban.com/subject/6097773/" target="_blank" rel="noopener">《Linux内核设计与实现 第3版》</a></li><li><a href="http://book.douban.com/subject/26268767/" target="_blank" rel="noopener">《WireShark网络分析就这么简单》</a></li><li><a href="http://book.douban.com/subject/26710788/" target="_blank" rel="noopener">《WireShark网络分析的艺术》</a></li><li>《TCP/IP详解(卷一：协议)》</li><li>《图解TCP/IP(第五版)》 </li><li>《HTTP权威指南》</li><li>《程序员的数学》（1基础 2统计 3线性代数）</li></ul><h2 id="开源框架与具体技术"><a href="#开源框架与具体技术" class="headerlink" title="开源框架与具体技术"></a>开源框架与具体技术</h2><ul><li>《Hadoop权威指南》</li><li>《Netty权威指南》</li><li>《从PAXOS到ZOOKEEPER分布式一致性原理与实践》</li><li><a href="http://book.douban.com/subject/26593175/" target="_blank" rel="noopener">《Docker: 容器与容器云》</a></li><li><a href="http://book.douban.com/subject/26702824/" target="_blank" rel="noopener">《分布式服务框架：原理与实践》</a></li><li><a href="http://book.douban.com/subject/26649141/" target="_blank" rel="noopener">《Spark技术内幕》</a></li><li>《Mastering Nginx 2nd Edition》</li></ul><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul><li>《亿级流量网站架构核心技术》 </li><li>《大型网站技术架构》</li><li>《大型分布式网站架构设计与实践》</li><li>《大型网站系统与Java中间件实践》</li></ul><h2 id="算法与数据结构-amp-设计模式"><a href="#算法与数据结构-amp-设计模式" class="headerlink" title="算法与数据结构 &amp; 设计模式"></a>算法与数据结构 &amp; 设计模式</h2><ul><li>《算法导论》</li><li>《数据结构与算法分析(Java语言描述)》</li><li>《算法4》</li></ul><ul><li>《Head First 设计模式》</li></ul><h2 id="数据库与缓存"><a href="#数据库与缓存" class="headerlink" title="数据库与缓存"></a>数据库与缓存</h2><ul><li>《Redis入门指南》</li><li><a href="http://book.douban.com/subject/25900156/" target="_blank" rel="noopener">《Redis设计与实现分析》</a></li><li>《MongoDB权威指南》</li><li>《MySQL技术内幕  InnoDB存储引擎  第2版》 </li><li>《高性能MySql》★★★★★</li></ul><h2 id="程序员的自我修养"><a href="#程序员的自我修养" class="headerlink" title="程序员的自我修养"></a>程序员的自我修养</h2><ul><li>《Clean Code》</li><li>《敏捷软件开发》</li><li>《重构》</li><li>《程序员修炼之道-从小工到专家》</li><li>《代码大全2》</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li>《HTML秘籍》</li><li>《JavaScript权威指南（第六版）》</li><li>《了不起的Node.js》</li><li>《Node.js开发指南》</li><li>《深入浅出Node.js》</li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>《技术之瞳》</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;—&lt;br&gt;title: My Book List&lt;br&gt;date: 2017-05-31 14:34:06&lt;br&gt;tags: 书单&lt;br&gt;categories:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 读书
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&quot;语言相关&quot;&gt;&lt;a href=&quot;#语言相关&quot; class=&quot;headerlink&quot; title=&quot;语言相关&quot;&gt;&lt;/a&gt;语言相关&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;《Java编程思想》&lt;/li&gt;
-&lt;li&gt;《深入理解JVM》★★★★★&lt;/li&gt;
-&lt;li&gt;《Java 并发编程实战》★★★★★&lt;/li&gt;
-&lt;li&gt;《深入理解Java虚拟机》★★★★★&lt;/li&gt;
-&lt;li&gt;《Effective Java》★★★★★&lt;/li&gt;
-&lt;li&gt;《Head First Python》&lt;/li&gt;
-&lt;li&gt;《C程序设计语言(第二版新版)》&lt;/li&gt;
-&lt;li&gt;《汇编语言(第三版)》&lt;/li&gt;
-&lt;li&gt;《深入分析Java Web技术内幕》&lt;/li&gt;
-&lt;li&gt;《Java并发编程的艺术》★★★★☆&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hexo 问题修复记录</title>
@@ -74,6 +42,39 @@
   </entry>
   
   <entry>
+    <title>我的书单</title>
+    <link href="http://peierlong.com/2019/02/14/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
+    <id>http://peierlong.com/2019/02/14/我的书单/</id>
+    <published>2019-02-14T11:56:04.000Z</published>
+    <updated>2019-03-14T01:58:23.853Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="语言相关"><a href="#语言相关" class="headerlink" title="语言相关"></a>语言相关</h2><ul><li>《Java编程思想》</li><li>《深入理解JVM》★★★★★</li><li>《Java 并发编程实战》★★★★★</li><li>《深入理解Java虚拟机》★★★★★</li><li>《Effective Java》★★★★★</li><li>《Head First Python》</li><li>《C程序设计语言(第二版新版)》</li><li>《汇编语言(第三版)》</li><li>《深入分析Java Web技术内幕》</li><li>《Java并发编程的艺术》★★★★☆</li></ul><a id="more"></a><h2 id="计算机基础与网络"><a href="#计算机基础与网络" class="headerlink" title="计算机基础与网络"></a>计算机基础与网络</h2><ul><li>《深入理解计算机系统》</li><li><a href="http://book.douban.com/subject/6097773/" target="_blank" rel="noopener">《Linux内核设计与实现 第3版》</a></li><li><a href="http://book.douban.com/subject/26268767/" target="_blank" rel="noopener">《WireShark网络分析就这么简单》</a></li><li><a href="http://book.douban.com/subject/26710788/" target="_blank" rel="noopener">《WireShark网络分析的艺术》</a></li><li>《TCP/IP详解(卷一：协议)》</li><li>《图解TCP/IP(第五版)》 </li><li>《HTTP权威指南》</li><li>《程序员的数学》（1基础 2统计 3线性代数）</li></ul><h2 id="开源框架与具体技术"><a href="#开源框架与具体技术" class="headerlink" title="开源框架与具体技术"></a>开源框架与具体技术</h2><ul><li>《Hadoop权威指南》</li><li>《Netty权威指南》</li><li>《从PAXOS到ZOOKEEPER分布式一致性原理与实践》</li><li><a href="http://book.douban.com/subject/26593175/" target="_blank" rel="noopener">《Docker: 容器与容器云》</a></li><li><a href="http://book.douban.com/subject/26702824/" target="_blank" rel="noopener">《分布式服务框架：原理与实践》</a></li><li><a href="http://book.douban.com/subject/26649141/" target="_blank" rel="noopener">《Spark技术内幕》</a></li><li>《Mastering Nginx 2nd Edition》</li></ul><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul><li>《亿级流量网站架构核心技术》 </li><li>《大型网站技术架构》</li><li>《大型分布式网站架构设计与实践》</li><li>《大型网站系统与Java中间件实践》</li></ul><h2 id="算法与数据结构-amp-设计模式"><a href="#算法与数据结构-amp-设计模式" class="headerlink" title="算法与数据结构 &amp; 设计模式"></a>算法与数据结构 &amp; 设计模式</h2><ul><li>《算法导论》</li><li>《数据结构与算法分析(Java语言描述)》</li><li>《算法4》</li></ul><ul><li>《Head First 设计模式》</li></ul><h2 id="数据库与缓存"><a href="#数据库与缓存" class="headerlink" title="数据库与缓存"></a>数据库与缓存</h2><ul><li>《Redis入门指南》</li><li><a href="http://book.douban.com/subject/25900156/" target="_blank" rel="noopener">《Redis设计与实现分析》</a></li><li>《MongoDB权威指南》</li><li>《MySQL技术内幕  InnoDB存储引擎  第2版》 </li><li>《高性能MySql》★★★★★</li></ul><h2 id="程序员的自我修养"><a href="#程序员的自我修养" class="headerlink" title="程序员的自我修养"></a>程序员的自我修养</h2><ul><li>《Clean Code》</li><li>《敏捷软件开发》</li><li>《重构》</li><li>《程序员修炼之道-从小工到专家》</li><li>《代码大全2》</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li>《HTML秘籍》</li><li>《JavaScript权威指南（第六版）》</li><li>《了不起的Node.js》</li><li>《Node.js开发指南》</li><li>《深入浅出Node.js》</li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>《技术之瞳》</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;语言相关&quot;&gt;&lt;a href=&quot;#语言相关&quot; class=&quot;headerlink&quot; title=&quot;语言相关&quot;&gt;&lt;/a&gt;语言相关&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;《Java编程思想》&lt;/li&gt;
+&lt;li&gt;《深入理解JVM》★★★★★&lt;/li&gt;
+&lt;li&gt;《Java 并发编程实战》★★★★★&lt;/li&gt;
+&lt;li&gt;《深入理解Java虚拟机》★★★★★&lt;/li&gt;
+&lt;li&gt;《Effective Java》★★★★★&lt;/li&gt;
+&lt;li&gt;《Head First Python》&lt;/li&gt;
+&lt;li&gt;《C程序设计语言(第二版新版)》&lt;/li&gt;
+&lt;li&gt;《汇编语言(第三版)》&lt;/li&gt;
+&lt;li&gt;《深入分析Java Web技术内幕》&lt;/li&gt;
+&lt;li&gt;《Java并发编程的艺术》★★★★☆&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="读书" scheme="http://peierlong.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="书单" scheme="http://peierlong.com/tags/%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot2.x整合ES2.x报failed to load elasticsearch nodes</title>
     <link href="http://peierlong.com/2018/07/18/SpringBoot2.x%E6%95%B4%E5%90%88ES2.x%E6%8A%A5failed-to-load-elasticsearch-nodes/"/>
     <id>http://peierlong.com/2018/07/18/SpringBoot2.x整合ES2.x报failed-to-load-elasticsearch-nodes/</id>
@@ -93,11 +94,11 @@
     
       <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
     
-      <category term="ES" scheme="http://peierlong.com/tags/ES/"/>
-    
       <category term="Spring" scheme="http://peierlong.com/tags/Spring/"/>
     
       <category term="Spring Boot" scheme="http://peierlong.com/tags/Spring-Boot/"/>
+    
+      <category term="ES" scheme="http://peierlong.com/tags/ES/"/>
     
   </entry>
   
