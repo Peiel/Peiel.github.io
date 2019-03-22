@@ -5,9 +5,9 @@
   <subtitle>大其愿 坚其志 虚其心 柔其气</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://peierlong.com/"/>
-  <updated>2019-03-14T02:07:06.567Z</updated>
-  <id>http://peierlong.com/</id>
+  <link href="http://www.peierlong.com/"/>
+  <updated>2019-03-22T08:20:26.281Z</updated>
+  <id>http://www.peierlong.com/</id>
   
   <author>
     <name>Peiel</name>
@@ -17,9 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java NIO 之 FileChannel 的使用</title>
+    <link href="http://www.peierlong.com/2019/03/22/Java-NIO-%E4%B9%8B-FileChannel-%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.peierlong.com/2019/03/22/Java-NIO-之-FileChannel-的使用/</id>
+    <published>2019-03-22T13:19:11.000Z</published>
+    <updated>2019-03-22T08:20:26.281Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="通过文件获取-FileChannel-实例"><a href="#通过文件获取-FileChannel-实例" class="headerlink" title="通过文件获取 FileChannel 实例"></a>通过文件获取 FileChannel 实例</h2><h3 id="1-从-FileInputstream-中获取"><a href="#1-从-FileInputstream-中获取" class="headerlink" title="1. 从 FileInputstream 中获取"></a>1. 从 FileInputstream 中获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"/Users/peiel/a.txt"</span>);</span><br><span class="line">FileChannel fileChannel = fis.getChannel();</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="2-使用-RandomAccessFile-获取"><a href="#2-使用-RandomAccessFile-获取" class="headerlink" title="2. 使用 RandomAccessFile 获取"></a>2. 使用 RandomAccessFile 获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RandomAccessFile fis = <span class="keyword">new</span> RandomAccessFile(<span class="string">"/Users/peiel/a.txt"</span>, <span class="string">"rw"</span>);</span><br><span class="line">FileChannel fileChannel = fis.getChannel();</span><br></pre></td></tr></table></figure><h2 id="打印读取-FileChannel-中的内容"><a href="#打印读取-FileChannel-中的内容" class="headerlink" title="打印读取 FileChannel 中的内容"></a>打印读取 FileChannel 中的内容</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer buf = ByteBuffer.allocate(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">while</span> ((len = fileChannel.read(buf)) != -<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// flip buf (limit = position; position = 0;)</span></span><br><span class="line">    buf.flip();</span><br><span class="line">    <span class="comment">// 方式一：转换成数组读取的方式</span></span><br><span class="line">    System.out.print(<span class="keyword">new</span> String(buf.array(), <span class="number">0</span>, len));</span><br><span class="line">    <span class="comment">// 方式二：直接读取的方式</span></span><br><span class="line">    <span class="keyword">while</span> (buf.hasRemaining()) &#123;</span><br><span class="line">        System.out.print((<span class="keyword">char</span>) buf.get());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// clear    </span></span><br><span class="line">    buf.clear();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="写入数据到文件中"><a href="#写入数据到文件中" class="headerlink" title="写入数据到文件中"></a>写入数据到文件中</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String newData = <span class="string">"This is a boy!"</span>;</span><br><span class="line"></span><br><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">16</span>);</span><br><span class="line">byteBuffer.clear();</span><br><span class="line">byteBuffer.put(newData.getBytes());</span><br><span class="line"></span><br><span class="line">byteBuffer.flip();</span><br><span class="line"><span class="keyword">while</span> (byteBuffer.hasRemaining()) &#123;</span><br><span class="line">    fileChannel.write(byteBuffer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;通过文件获取-FileChannel-实例&quot;&gt;&lt;a href=&quot;#通过文件获取-FileChannel-实例&quot; class=&quot;headerlink&quot; title=&quot;通过文件获取 FileChannel 实例&quot;&gt;&lt;/a&gt;通过文件获取 FileChannel 实例&lt;/h2&gt;&lt;h3 id=&quot;1-从-FileInputstream-中获取&quot;&gt;&lt;a href=&quot;#1-从-FileInputstream-中获取&quot; class=&quot;headerlink&quot; title=&quot;1. 从 FileInputstream 中获取&quot;&gt;&lt;/a&gt;1. 从 FileInputstream 中获取&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;FileInputStream fis = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; FileInputStream(&lt;span class=&quot;string&quot;&gt;&quot;/Users/peiel/a.txt&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FileChannel fileChannel = fis.getChannel();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
+    
+      <category term="JVM" scheme="http://www.peierlong.com/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 问题修复记录</title>
-    <link href="http://peierlong.com/2019/03/12/hexo-problem-fix/"/>
-    <id>http://peierlong.com/2019/03/12/hexo-problem-fix/</id>
+    <link href="http://www.peierlong.com/2019/03/12/hexo-problem-fix/"/>
+    <id>http://www.peierlong.com/2019/03/12/hexo-problem-fix/</id>
     <published>2019-03-12T13:37:52.000Z</published>
     <updated>2019-03-14T02:07:06.567Z</updated>
     
@@ -34,17 +58,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://peierlong.com/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://www.peierlong.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://peierlong.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.peierlong.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>我的书单</title>
-    <link href="http://peierlong.com/2019/02/14/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
-    <id>http://peierlong.com/2019/02/14/我的书单/</id>
+    <link href="http://www.peierlong.com/2019/02/14/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
+    <id>http://www.peierlong.com/2019/02/14/我的书单/</id>
     <published>2019-02-14T11:56:04.000Z</published>
     <updated>2019-03-14T02:02:22.392Z</updated>
     
@@ -59,17 +83,17 @@
     
     </summary>
     
-      <category term="读书" scheme="http://peierlong.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="http://www.peierlong.com/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
-      <category term="书单" scheme="http://peierlong.com/tags/%E4%B9%A6%E5%8D%95/"/>
+      <category term="书单" scheme="http://www.peierlong.com/tags/%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot2.x整合ES2.x报failed to load elasticsearch nodes</title>
-    <link href="http://peierlong.com/2018/07/18/SpringBoot2.x%E6%95%B4%E5%90%88ES2.x%E6%8A%A5failed-to-load-elasticsearch-nodes/"/>
-    <id>http://peierlong.com/2018/07/18/SpringBoot2.x整合ES2.x报failed-to-load-elasticsearch-nodes/</id>
+    <link href="http://www.peierlong.com/2018/07/18/SpringBoot2.x%E6%95%B4%E5%90%88ES2.x%E6%8A%A5failed-to-load-elasticsearch-nodes/"/>
+    <id>http://www.peierlong.com/2018/07/18/SpringBoot2.x整合ES2.x报failed-to-load-elasticsearch-nodes/</id>
     <published>2018-07-18T02:26:16.000Z</published>
     <updated>2019-03-13T02:32:01.040Z</updated>
     
@@ -81,23 +105,23 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="Spring" scheme="http://peierlong.com/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.peierlong.com/tags/Spring/"/>
     
-      <category term="Spring Boot" scheme="http://peierlong.com/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://www.peierlong.com/tags/Spring-Boot/"/>
     
-      <category term="ES" scheme="http://peierlong.com/tags/ES/"/>
+      <category term="ES" scheme="http://www.peierlong.com/tags/ES/"/>
     
   </entry>
   
   <entry>
     <title>HttpClient4.5.3源码浅析(HttpClient的execute方法执行过程)</title>
-    <link href="http://peierlong.com/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/"/>
-    <id>http://peierlong.com/2018/06/29/HttpClient4-5-3源码浅析(HttpClient的execute方法执行过程)/</id>
+    <link href="http://www.peierlong.com/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/"/>
+    <id>http://www.peierlong.com/2018/06/29/HttpClient4-5-3源码浅析(HttpClient的execute方法执行过程)/</id>
     <published>2018-06-29T07:07:03.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -109,19 +133,19 @@
     
     </summary>
     
-      <category term="网络" scheme="http://peierlong.com/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="http://www.peierlong.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Http" scheme="http://peierlong.com/tags/Http/"/>
+      <category term="Http" scheme="http://www.peierlong.com/tags/Http/"/>
     
-      <category term="HttpClient" scheme="http://peierlong.com/tags/HttpClient/"/>
+      <category term="HttpClient" scheme="http://www.peierlong.com/tags/HttpClient/"/>
     
   </entry>
   
   <entry>
     <title>HttpClient4.5.3源码浅析(HttpClient对象构造过程)</title>
-    <link href="http://peierlong.com/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/"/>
-    <id>http://peierlong.com/2018/06/28/HttpClient4.5.3源码浅析(HttpClient构造过程)/</id>
+    <link href="http://www.peierlong.com/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/"/>
+    <id>http://www.peierlong.com/2018/06/28/HttpClient4.5.3源码浅析(HttpClient构造过程)/</id>
     <published>2018-06-28T08:22:27.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -133,19 +157,19 @@
     
     </summary>
     
-      <category term="网络" scheme="http://peierlong.com/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="http://www.peierlong.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Http" scheme="http://peierlong.com/tags/Http/"/>
+      <category term="Http" scheme="http://www.peierlong.com/tags/Http/"/>
     
-      <category term="HttpClient" scheme="http://peierlong.com/tags/HttpClient/"/>
+      <category term="HttpClient" scheme="http://www.peierlong.com/tags/HttpClient/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot读取配置文件方法</title>
-    <link href="http://peierlong.com/2018/06/21/Spring-Boot%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
-    <id>http://peierlong.com/2018/06/21/Spring-Boot读取配置文件方法/</id>
+    <link href="http://www.peierlong.com/2018/06/21/Spring-Boot%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.peierlong.com/2018/06/21/Spring-Boot读取配置文件方法/</id>
     <published>2018-06-21T06:32:50.000Z</published>
     <updated>2019-03-14T02:06:15.498Z</updated>
     
@@ -158,21 +182,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="Spring" scheme="http://peierlong.com/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.peierlong.com/tags/Spring/"/>
     
-      <category term="Spring Boot" scheme="http://peierlong.com/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://www.peierlong.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>微信支付生成10位一天内不能重复的数字工具类</title>
-    <link href="http://peierlong.com/2018/05/15/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%94%9F%E6%88%9010%E4%BD%8D%E4%B8%80%E5%A4%A9%E5%86%85%E4%B8%8D%E8%83%BD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    <id>http://peierlong.com/2018/05/15/微信支付生成10位一天内不能重复的数字工具类/</id>
+    <link href="http://www.peierlong.com/2018/05/15/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%94%9F%E6%88%9010%E4%BD%8D%E4%B8%80%E5%A4%A9%E5%86%85%E4%B8%8D%E8%83%BD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>http://www.peierlong.com/2018/05/15/微信支付生成10位一天内不能重复的数字工具类/</id>
     <published>2018-05-15T08:00:15.000Z</published>
     <updated>2019-03-13T03:20:13.531Z</updated>
     
@@ -184,19 +208,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="WXPay" scheme="http://peierlong.com/tags/WXPay/"/>
+      <category term="WXPay" scheme="http://www.peierlong.com/tags/WXPay/"/>
     
   </entry>
   
   <entry>
     <title>Java ClassLodaer 知识总结</title>
-    <link href="http://peierlong.com/2018/03/28/Java-ClassLodaer-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    <id>http://peierlong.com/2018/03/28/Java-ClassLodaer-知识总结/</id>
+    <link href="http://www.peierlong.com/2018/03/28/Java-ClassLodaer-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.peierlong.com/2018/03/28/Java-ClassLodaer-知识总结/</id>
     <published>2018-03-28T08:46:05.000Z</published>
     <updated>2019-03-13T02:32:01.037Z</updated>
     
@@ -211,21 +235,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peierlong.com/tags/JVM/"/>
+      <category term="JVM" scheme="http://www.peierlong.com/tags/JVM/"/>
     
-      <category term="ClassLoader" scheme="http://peierlong.com/tags/ClassLoader/"/>
+      <category term="ClassLoader" scheme="http://www.peierlong.com/tags/ClassLoader/"/>
     
   </entry>
   
   <entry>
     <title>Java字节码指令的分类</title>
-    <link href="http://peierlong.com/2018/03/28/Java%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E7%9A%84%E5%88%86%E7%B1%BB/"/>
-    <id>http://peierlong.com/2018/03/28/Java字节码指令的分类/</id>
+    <link href="http://www.peierlong.com/2018/03/28/Java%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E7%9A%84%E5%88%86%E7%B1%BB/"/>
+    <id>http://www.peierlong.com/2018/03/28/Java字节码指令的分类/</id>
     <published>2018-03-28T07:36:30.000Z</published>
     <updated>2019-03-13T02:32:01.037Z</updated>
     
@@ -237,19 +261,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peierlong.com/tags/JVM/"/>
+      <category term="JVM" scheme="http://www.peierlong.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>阿里云文件上传Python脚本(自动复制MarkDown语法的图片至粘贴板)</title>
-    <link href="http://peierlong.com/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/"/>
-    <id>http://peierlong.com/2018/03/13/阿里云文件上传Python脚本-自动复制MarkDown语法的图片至粘贴板/</id>
+    <link href="http://www.peierlong.com/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/"/>
+    <id>http://www.peierlong.com/2018/03/13/阿里云文件上传Python脚本-自动复制MarkDown语法的图片至粘贴板/</id>
     <published>2018-03-13T05:07:40.000Z</published>
     <updated>2019-03-13T02:32:01.044Z</updated>
     
@@ -264,19 +288,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://peierlong.com/categories/Python/"/>
+      <category term="Python" scheme="http://www.peierlong.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://peierlong.com/tags/Python/"/>
+      <category term="Python" scheme="http://www.peierlong.com/tags/Python/"/>
     
-      <category term="aliyun" scheme="http://peierlong.com/tags/aliyun/"/>
+      <category term="aliyun" scheme="http://www.peierlong.com/tags/aliyun/"/>
     
   </entry>
   
   <entry>
     <title>JVM垃圾收集器知识总结</title>
-    <link href="http://peierlong.com/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    <id>http://peierlong.com/2018/03/09/JVM垃圾收集器知识总结/</id>
+    <link href="http://www.peierlong.com/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.peierlong.com/2018/03/09/JVM垃圾收集器知识总结/</id>
     <published>2018-03-09T10:16:25.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -292,19 +316,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peierlong.com/tags/JVM/"/>
+      <category term="JVM" scheme="http://www.peierlong.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>JVM内存模型简述</title>
-    <link href="http://peierlong.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
-    <id>http://peierlong.com/2018/03/09/JVM内存模型总结/</id>
+    <link href="http://www.peierlong.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.peierlong.com/2018/03/09/JVM内存模型总结/</id>
     <published>2018-03-09T10:11:14.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -320,19 +344,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peierlong.com/tags/JVM/"/>
+      <category term="JVM" scheme="http://www.peierlong.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>《Elasticsearch权威指南》读书笔记</title>
-    <link href="http://peierlong.com/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://peierlong.com/2018/03/06/《Elasticsearch-权威指南》读书笔记/</id>
+    <link href="http://www.peierlong.com/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.peierlong.com/2018/03/06/《Elasticsearch-权威指南》读书笔记/</id>
     <published>2018-03-06T06:31:27.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -346,17 +370,17 @@
     
     </summary>
     
-      <category term="Elasticsearch" scheme="http://peierlong.com/categories/Elasticsearch/"/>
+      <category term="Elasticsearch" scheme="http://www.peierlong.com/categories/Elasticsearch/"/>
     
     
-      <category term="Elasticsearch" scheme="http://peierlong.com/tags/Elasticsearch/"/>
+      <category term="Elasticsearch" scheme="http://www.peierlong.com/tags/Elasticsearch/"/>
     
   </entry>
   
   <entry>
     <title>二叉查找树实现</title>
-    <link href="http://peierlong.com/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://peierlong.com/2018/02/09/二叉查找树实现/</id>
+    <link href="http://www.peierlong.com/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://www.peierlong.com/2018/02/09/二叉查找树实现/</id>
     <published>2018-02-09T06:21:43.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -375,17 +399,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>tomcat下slf4j日志不输出问题探究与解决</title>
-    <link href="http://peierlong.com/2018/02/05/tomcat%E4%B8%8Bslf4j%E6%97%A5%E5%BF%97%E4%B8%8D%E8%BE%93%E5%87%BA%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6%E4%B8%8E%E8%A7%A3%E5%86%B3/"/>
-    <id>http://peierlong.com/2018/02/05/tomcat下slf4j日志不输出问题探究与解决/</id>
+    <link href="http://www.peierlong.com/2018/02/05/tomcat%E4%B8%8Bslf4j%E6%97%A5%E5%BF%97%E4%B8%8D%E8%BE%93%E5%87%BA%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6%E4%B8%8E%E8%A7%A3%E5%86%B3/"/>
+    <id>http://www.peierlong.com/2018/02/05/tomcat下slf4j日志不输出问题探究与解决/</id>
     <published>2018-02-05T03:10:36.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -398,21 +422,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peierlong.com/categories/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peierlong.com/tags/Java/"/>
+      <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
-      <category term="Log" scheme="http://peierlong.com/tags/Log/"/>
+      <category term="Log" scheme="http://www.peierlong.com/tags/Log/"/>
     
-      <category term="Tomcat" scheme="http://peierlong.com/tags/Tomcat/"/>
+      <category term="Tomcat" scheme="http://www.peierlong.com/tags/Tomcat/"/>
     
   </entry>
   
   <entry>
     <title>8Puzzle问题实现与踩坑</title>
-    <link href="http://peierlong.com/2018/01/22/8Puzzle%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/"/>
-    <id>http://peierlong.com/2018/01/22/8Puzzle问题解答/</id>
+    <link href="http://www.peierlong.com/2018/01/22/8Puzzle%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/"/>
+    <id>http://www.peierlong.com/2018/01/22/8Puzzle问题解答/</id>
     <published>2018-01-22T10:03:15.000Z</published>
     <updated>2019-03-13T02:32:01.032Z</updated>
     
@@ -426,17 +450,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>算法4公开课8-Puzzle编程题概述</title>
-    <link href="http://peierlong.com/2018/01/18/%E7%AE%97%E6%B3%954%E5%85%AC%E5%BC%80%E8%AF%BE8Puzzle%E7%BC%96%E7%A8%8B%E9%A2%98%E6%A6%82%E8%BF%B0/"/>
-    <id>http://peierlong.com/2018/01/18/算法4公开课8Puzzle编程题概述/</id>
+    <link href="http://www.peierlong.com/2018/01/18/%E7%AE%97%E6%B3%954%E5%85%AC%E5%BC%80%E8%AF%BE8Puzzle%E7%BC%96%E7%A8%8B%E9%A2%98%E6%A6%82%E8%BF%B0/"/>
+    <id>http://www.peierlong.com/2018/01/18/算法4公开课8Puzzle编程题概述/</id>
     <published>2018-01-18T07:19:58.000Z</published>
     <updated>2019-03-13T02:32:01.044Z</updated>
     
@@ -450,17 +474,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>堆排序(HeapSort)实现</title>
-    <link href="http://peierlong.com/2017/12/26/%E5%A0%86%E6%8E%92%E5%BA%8F(HeapSort)-%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://peierlong.com/2017/12/26/堆排序(HeapSort)-实现/</id>
+    <link href="http://www.peierlong.com/2017/12/26/%E5%A0%86%E6%8E%92%E5%BA%8F(HeapSort)-%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://www.peierlong.com/2017/12/26/堆排序(HeapSort)-实现/</id>
     <published>2017-12-26T03:36:00.000Z</published>
     <updated>2019-03-13T02:32:01.042Z</updated>
     
@@ -472,17 +496,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>优先队列(PriorityQueues)与二叉堆数据结构</title>
-    <link href="http://peierlong.com/2017/12/25/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97(PriorityQueues)%E4%B8%8E%E4%BA%8C%E5%8F%89%E5%A0%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://peierlong.com/2017/12/25/优先队列(PriorityQueues)与二叉堆数据结构/</id>
+    <link href="http://www.peierlong.com/2017/12/25/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97(PriorityQueues)%E4%B8%8E%E4%BA%8C%E5%8F%89%E5%A0%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://www.peierlong.com/2017/12/25/优先队列(PriorityQueues)与二叉堆数据结构/</id>
     <published>2017-12-25T09:55:20.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -498,37 +522,10 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序(QuickSort)的实现</title>
-    <link href="http://peierlong.com/2017/12/25/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F(QuickSort)%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://peierlong.com/2017/12/25/快速排序(QuickSort)的实现/</id>
-    <published>2017-12-25T09:30:43.000Z</published>
-    <updated>2019-03-13T02:32:01.043Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="快速的排序逻辑"><a href="#快速的排序逻辑" class="headerlink" title="快速的排序逻辑"></a>快速的排序逻辑</h2><ul><li>快速排序的主要思想是递归</li><li>第一步：对需要排序的所有元素进行Shuffle。</li><li>第二步：取第一个元素为区分元素<code>k</code>，取第二个元素为<code>i</code>，取最后一个元素为<code>j</code>，<code>i</code>向右<code>j</code>向左分别迭代，最后替换<code>k</code>元素和<code>j</code>元素，最终保持<code>k</code>左侧的元素都小于<code>k</code>，右侧元素都大于<code>k</code>。</li><li>第三步：不停对左右部分再次进行上一步动作，最终排序完成。</li></ul><a id="more"></a><h2 id="Java代码实现"><a href="#Java代码实现" class="headerlink" title="Java代码实现"></a>Java代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        Shuffle.shuffle(a);</span><br><span class="line">        sort(a, <span class="number">0</span>, a.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hi &lt;= lo) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> j = partition(a, lo, hi);</span><br><span class="line">        sort(a, lo, j - <span class="number">1</span>);</span><br><span class="line">        sort(a, j + <span class="number">1</span>, hi);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = lo, j = hi + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (less(a[++i], a[lo])) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == hi) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (less(a[lo], a[--j])) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == lo) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(a, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(a, lo, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="小优化"><a href="#小优化" class="headerlink" title="小优化"></a>小优化</h2><p>在数组大小较小时，使用插入排序比快速排序执行效率要高。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private static final int INSERTIONSORT_THRESHOLD = 7;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((hi - lo) &lt; INSERTIONSORT_THRESHOLD) &#123;</span><br><span class="line">    InsertionSort.sort(a, lo, hi);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>以上，快速排序的思想真的有些烧脑，实现起来坑还是很多，需要仔细仔细再仔细的思考每一个细节。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;快速的排序逻辑&quot;&gt;&lt;a href=&quot;#快速的排序逻辑&quot; class=&quot;headerlink&quot; title=&quot;快速的排序逻辑&quot;&gt;&lt;/a&gt;快速的排序逻辑&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;快速排序的主要思想是递归&lt;/li&gt;
-&lt;li&gt;第一步：对需要排序的所有元素进行Shuffle。&lt;/li&gt;
-&lt;li&gt;第二步：取第一个元素为区分元素&lt;code&gt;k&lt;/code&gt;，取第二个元素为&lt;code&gt;i&lt;/code&gt;，取最后一个元素为&lt;code&gt;j&lt;/code&gt;，&lt;code&gt;i&lt;/code&gt;向右&lt;code&gt;j&lt;/code&gt;向左分别迭代，最后替换&lt;code&gt;k&lt;/code&gt;元素和&lt;code&gt;j&lt;/code&gt;元素，最终保持&lt;code&gt;k&lt;/code&gt;左侧的元素都小于&lt;code&gt;k&lt;/code&gt;，右侧元素都大于&lt;code&gt;k&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;第三步：不停对左右部分再次进行上一步动作，最终排序完成。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Algorithms" scheme="http://peierlong.com/categories/Algorithms/"/>
-    
-    
-      <category term="Algorithms" scheme="http://peierlong.com/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
     
   </entry>
   
