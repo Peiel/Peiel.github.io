@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peierlong.com/"/>
-  <updated>2019-04-12T02:16:30.258Z</updated>
+  <updated>2019-04-18T02:34:37.021Z</updated>
   <id>http://www.peierlong.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>递归的理解</title>
+    <link href="http://www.peierlong.com/2019/04/11/%E9%80%92%E5%BD%92%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://www.peierlong.com/2019/04/11/递归的理解/</id>
+    <published>2019-04-11T12:33:17.000Z</published>
+    <updated>2019-04-18T02:34:37.021Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是递归"><a href="#什么是递归" class="headerlink" title="什么是递归"></a>什么是递归</h2><p>方法或函数调用自身的方式称之为递归，调用成为递，返回称为归。</p><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：代码简洁表达能力强。<br>缺点：空间复杂度高，栈溢出，存在重复计算。</p><a id="more"></a><h2 id="递归使用场景"><a href="#递归使用场景" class="headerlink" title="递归使用场景"></a>递归使用场景</h2><p>满足以下三个条件，就可以使用递归：</p><ol><li>问题的解可以分解为几个子问题的解，何为子问题？就是数据规模更小的问题。</li><li>问题与子问题，除了数据规模不同，求解思路完全一样。</li><li>存在递归终止条件。</li></ol><h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><h3 id="1-编写"><a href="#1-编写" class="headerlink" title="1. 编写"></a>1. 编写</h3><p>关键是找到如何将大问题分解为小问题的规律，写出递归公式，推敲终止条件，最后翻译成实际的代码。</p><h3 id="2-理解"><a href="#2-理解" class="headerlink" title="2. 理解"></a>2. 理解</h3><p>避免思维误区：不要试图去想清楚整个递和归的过程。<br>那怎么想？如果问题 A 可以分解为 B、C、D 三个子问题，可以假设 B、C、D 已经解决。只需要思考问题 A 和 子问题之间的关系即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是递归&quot;&gt;&lt;a href=&quot;#什么是递归&quot; class=&quot;headerlink&quot; title=&quot;什么是递归&quot;&gt;&lt;/a&gt;什么是递归&lt;/h2&gt;&lt;p&gt;方法或函数调用自身的方式称之为递归，调用成为递，返回称为归。&lt;/p&gt;
+&lt;h2 id=&quot;优缺点&quot;&gt;&lt;a href=&quot;#优缺点&quot; class=&quot;headerlink&quot; title=&quot;优缺点&quot;&gt;&lt;/a&gt;优缺点&lt;/h2&gt;&lt;p&gt;优点：代码简洁表达能力强。&lt;br&gt;缺点：空间复杂度高，栈溢出，存在重复计算。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
+    
+    
+      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
+    
+  </entry>
   
   <entry>
     <title>《暗时间》读书笔记</title>
@@ -130,11 +153,11 @@
     
       <category term="Java" scheme="http://www.peierlong.com/tags/Java/"/>
     
+      <category term="ES" scheme="http://www.peierlong.com/tags/ES/"/>
+    
       <category term="Spring" scheme="http://www.peierlong.com/tags/Spring/"/>
     
       <category term="Spring Boot" scheme="http://www.peierlong.com/tags/Spring-Boot/"/>
-    
-      <category term="ES" scheme="http://www.peierlong.com/tags/ES/"/>
     
   </entry>
   
@@ -491,28 +514,6 @@
       &lt;p&gt;原题地址：&lt;a href=&quot;http://coursera.cs.princeton.edu/algs4/assignments/8puzzle.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://coursera.cs.princeton.edu/algs4/assignments/8puzzle.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本文主要针对原题做一个简单的概述，目的是理解8-Puzzle问题，以便方便自己日后查看。有看到这篇文章的小伙伴也可以发邮件一起交流。英文阅读能力强请忽略本文直接去原文。&lt;/p&gt;
 &lt;h2 id=&quot;The-problem&quot;&gt;&lt;a href=&quot;#The-problem&quot; class=&quot;headerlink&quot; title=&quot;The problem&quot;&gt;&lt;/a&gt;The problem&lt;/h2&gt;&lt;p&gt;&lt;code&gt;8-Puzzle&lt;/code&gt;问题是Noyes Palmer Chapman在1870年发明和推广的一个难题，在一个&lt;code&gt;3*3&lt;/code&gt;的网络格子上放着&lt;code&gt;1~8&lt;/code&gt;和一个空白位，需要实现的目标就是使用最少的步数，对&lt;code&gt;1~8&lt;/code&gt;进行排序并使空白位在最后一格中，只允许将数字块横向和纵向移入空白块，以下为图例：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Algorithms" scheme="http://www.peierlong.com/categories/Algorithms/"/>
-    
-    
-      <category term="Algorithms" scheme="http://www.peierlong.com/tags/Algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>堆排序(HeapSort)实现</title>
-    <link href="http://www.peierlong.com/2017/12/26/%E5%A0%86%E6%8E%92%E5%BA%8F(HeapSort)-%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://www.peierlong.com/2017/12/26/堆排序(HeapSort)-实现/</id>
-    <published>2017-12-26T03:36:00.000Z</published>
-    <updated>2019-03-13T02:32:01.042Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="堆排序实现思路"><a href="#堆排序实现思路" class="headerlink" title="堆排序实现思路"></a>堆排序实现思路</h2><p>堆排序是基于二叉堆数据结构实现的排序算法，排序思路非常简单，主要包含以下两步。</p><a id="more"></a><p><strong>第一步：对N个元素构建 max-heap 数据结构</strong></p><p>逆序对所有二叉子树的父级进行下沉操作，二叉子树的最大父级元素为<code>n/2</code>。  </p><p><strong>第二步：对最大元素替换移除</strong></p><p>把根元素和尾元素进行替换操作，然后长度计数器去掉尾元素的索引，并对根元素进行下沉操作。</p><h2 id="Java实现代码"><a href="#Java实现代码" class="headerlink" title="Java实现代码"></a>Java实现代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeapSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] pq)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = pq.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">            sink(pq, i, n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            exch(pq, <span class="number">1</span>, n);</span><br><span class="line">            sink(pq, <span class="number">1</span>, --n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 堆元素下沉</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sink</span><span class="params">(Comparable[] pq, <span class="keyword">int</span> k, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="number">2</span> * k &lt;= n) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">2</span> * k;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; n &amp;&amp; less(pq, j, j + <span class="number">1</span>)) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!less(pq, k, j)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            exch(pq, j, k);</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断i元素是否小于j元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable[] pq, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pq[i - <span class="number">1</span>].compareTo(pq[j - <span class="number">1</span>]) &lt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 替换方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] pq, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        Comparable swap = pq[i - <span class="number">1</span>];</span><br><span class="line">        pq[i - <span class="number">1</span>] = pq[j - <span class="number">1</span>];</span><br><span class="line">        pq[j - <span class="number">1</span>] = swap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer[] a = &#123;<span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">54</span>, <span class="number">75</span>, <span class="number">1</span>, <span class="number">88</span>, <span class="number">44</span>, <span class="number">45</span>, <span class="number">54</span>, <span class="number">78</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">11</span>, <span class="number">991</span>, <span class="number">765</span>, <span class="number">28</span>, <span class="number">29</span>, <span class="number">49</span>, <span class="number">81</span>, <span class="number">80</span>&#125;;</span><br><span class="line">        HeapSort.sort(a);</span><br><span class="line">        <span class="keyword">for</span> (Integer i : a) &#123;</span><br><span class="line">            StdOut.print(i + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="个人遇到的排序逻辑难点"><a href="#个人遇到的排序逻辑难点" class="headerlink" title="个人遇到的排序逻辑难点"></a>个人遇到的排序逻辑难点</h2><ol><li>下沉操作的循环如何判断？答：判断子树是否小于等于树长</li><li>下沉操作的两个子树索引的判断？答：如程序中判断。</li><li>less()方法为何报数组越界异常？答：因为二叉堆的根元素的索引是从1开始的，所以做数据操作时需要对索引减1。</li></ol><p>以上堆排序完成，转载请注明出处。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;堆排序实现思路&quot;&gt;&lt;a href=&quot;#堆排序实现思路&quot; class=&quot;headerlink&quot; title=&quot;堆排序实现思路&quot;&gt;&lt;/a&gt;堆排序实现思路&lt;/h2&gt;&lt;p&gt;堆排序是基于二叉堆数据结构实现的排序算法，排序思路非常简单，主要包含以下两步。&lt;/p&gt;
     
     </summary>
     
