@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.peierlong.com/2018/01/18/%E7%AE%97%E6%B3%954%E5%85%AC%E5%BC%80%E8%AF%BE8Puzzle%E7%BC%96%E7%A8%8B%E9%A2%98%E6%A6%82%E8%BF%B0/</loc>
+    <loc>http://www.peierlong.com/2018/02/05/tomcat%E4%B8%8Bslf4j%E6%97%A5%E5%BF%97%E4%B8%8D%E8%BE%93%E5%87%BA%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6%E4%B8%8E%E8%A7%A3%E5%86%B3/</loc>
     
-    <lastmod>2019-05-13T07:56:18.652Z</lastmod>
+    <lastmod>2019-05-13T08:03:26.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/02/05/tomcat%E4%B8%8Bslf4j%E6%97%A5%E5%BF%97%E4%B8%8D%E8%BE%93%E5%87%BA%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6%E4%B8%8E%E8%A7%A3%E5%86%B3/</loc>
+    <loc>http://www.peierlong.com/2018/01/18/%E7%AE%97%E6%B3%954%E5%85%AC%E5%BC%80%E8%AF%BE8Puzzle%E7%BC%96%E7%A8%8B%E9%A2%98%E6%A6%82%E8%BF%B0/</loc>
     
-    <lastmod>2019-05-05T07:18:39.171Z</lastmod>
+    <lastmod>2019-05-13T07:56:18.652Z</lastmod>
     
   </url>
   
@@ -65,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/timeline/index.html</loc>
-    
-    <lastmod>2019-03-13T02:32:01.058Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/tags/index.html</loc>
     
     <lastmod>2019-03-13T02:32:01.058Z</lastmod>
@@ -79,9 +72,9 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/categories/index.html</loc>
+    <loc>http://www.peierlong.com/timeline/index.html</loc>
     
-    <lastmod>2019-03-13T02:32:01.045Z</lastmod>
+    <lastmod>2019-03-13T02:32:01.058Z</lastmod>
     
   </url>
   
@@ -100,16 +93,9 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/about/index.html</loc>
+    <loc>http://www.peierlong.com/categories/index.html</loc>
     
-    <lastmod>2019-03-13T02:32:01.044Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.peierlong.com/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.044Z</lastmod>
+    <lastmod>2019-03-13T02:32:01.045Z</lastmod>
     
   </url>
   
@@ -128,9 +114,30 @@
   </url>
   
   <url>
+    <loc>http://www.peierlong.com/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.044Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/about/index.html</loc>
+    
+    <lastmod>2019-03-13T02:32:01.044Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.peierlong.com/2015/04/06/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E7%BB%9F%E8%AE%A1%E5%87%BA%E6%95%B0%E6%8D%AE%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%8B%AC%E7%AB%8B%E8%AE%BF%E9%97%AE/</loc>
     
     <lastmod>2019-03-13T02:32:01.044Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2017/11/21/%E6%A0%B9%E6%8D%AE%E4%B8%8D%E5%90%8C%E8%A7%84%E6%A8%A1%E6%A0%B7%E6%9C%AC%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E5%85%AC%E5%BC%8F/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.043Z</lastmod>
     
   </url>
   
@@ -156,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/11/21/%E6%A0%B9%E6%8D%AE%E4%B8%8D%E5%90%8C%E8%A7%84%E6%A8%A1%E6%A0%B7%E6%9C%AC%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E5%85%AC%E5%BC%8F/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.043Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/2016/11/25/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2019-03-13T02:32:01.042Z</lastmod>
@@ -177,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/12/15/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F(MergeSort)%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.042Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/2016/07/09/%E5%BC%82%E5%B8%B8%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/</loc>
     
     <lastmod>2019-03-13T02:32:01.042Z</lastmod>
@@ -191,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/12/04/%E5%8F%8C%E8%B0%83%E6%95%B0%E7%BB%84(bitonic%20array)%E7%9A%84%E9%AB%98%E6%95%88(~2lgN)%E6%90%9C%E7%B4%A2/</loc>
+    <loc>http://www.peierlong.com/2017/12/15/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F(MergeSort)%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.042Z</lastmod>
     
@@ -212,9 +205,9 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://www.peierlong.com/2017/12/04/%E5%8F%8C%E8%B0%83%E6%95%B0%E7%BB%84(bitonic%20array)%E7%9A%84%E9%AB%98%E6%95%88(~2lgN)%E6%90%9C%E7%B4%A2/</loc>
     
-    <lastmod>2019-03-13T02:32:01.041Z</lastmod>
+    <lastmod>2019-03-13T02:32:01.042Z</lastmod>
     
   </url>
   
@@ -226,7 +219,7 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>http://www.peierlong.com/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.041Z</lastmod>
     
@@ -234,6 +227,13 @@
   
   <url>
     <loc>http://www.peierlong.com/2016/12/20/%E3%80%8AClean-Code%E3%80%8B%E7%AC%AC17%E7%AB%A0-%E5%91%B3%E9%81%93%E4%B8%8E%E5%90%AF%E5%8F%91%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.041Z</lastmod>
     
@@ -275,6 +275,13 @@
   </url>
   
   <url>
+    <loc>http://www.peierlong.com/2017/03/10/NIO%E8%AF%BB%E5%8F%96UTF-8%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.039Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.peierlong.com/2016/09/02/NTFS%E6%A0%BC%E5%BC%8F%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98(U%E7%9B%98)%E5%9C%A8Mac%20OS%E4%B8%8B%E6%97%A0%E6%B3%95%E5%86%99%E5%85%A5%E8%A7%A3%E5%86%B3/</loc>
     
     <lastmod>2019-03-13T02:32:01.039Z</lastmod>
@@ -310,13 +317,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/03/10/NIO%E8%AF%BB%E5%8F%96UTF-8%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.039Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/2017/06/30/MySql%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-03-13T02:32:01.038Z</lastmod>
@@ -324,7 +324,7 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/01/03/Linux%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B/</loc>
+    <loc>http://www.peierlong.com/2017/06/13/Mac%E4%B8%8BMysql%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</loc>
     
     <lastmod>2019-03-13T02:32:01.038Z</lastmod>
     
@@ -338,7 +338,7 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/06/13/Mac%E4%B8%8BMysql%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</loc>
+    <loc>http://www.peierlong.com/2017/01/03/Linux%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B/</loc>
     
     <lastmod>2019-03-13T02:32:01.038Z</lastmod>
     
@@ -366,21 +366,7 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/05/11/Linux%E4%B8%8B%E6%97%B6%E9%97%B4%E6%A0%A1%E5%AF%B9/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.037Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.peierlong.com/2017/01/03/Java%20NIO%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.037Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.peierlong.com/2017/01/09/Java%20Concurrency%20in%20Practice%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</loc>
+    <loc>http://www.peierlong.com/2017/11/15/Java%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E6%A6%82%E8%BF%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.037Z</lastmod>
     
@@ -401,21 +387,28 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/11/15/Java%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E6%A6%82%E8%BF%B0/</loc>
+    <loc>http://www.peierlong.com/2017/01/03/Java%20NIO%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-03-13T02:32:01.037Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://www.peierlong.com/2017/01/09/Java%20Concurrency%20in%20Practice%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</loc>
     
-    <lastmod>2019-03-13T02:32:01.036Z</lastmod>
+    <lastmod>2019-03-13T02:32:01.037Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/</loc>
+    <loc>http://www.peierlong.com/2017/05/11/Linux%E4%B8%8B%E6%97%B6%E9%97%B4%E6%A0%A1%E5%AF%B9/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.037Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-03-13T02:32:01.036Z</lastmod>
     
@@ -429,14 +422,21 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://www.peierlong.com/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/</loc>
     
     <lastmod>2019-03-13T02:32:01.036Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/</loc>
+    <loc>http://www.peierlong.com/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.036Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/</loc>
     
     <lastmod>2019-03-13T02:32:01.036Z</lastmod>
     
@@ -478,13 +478,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/10/09/ElasticSearch%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.035Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/2015/11/24/Git%20Commit%E6%8F%90%E4%BA%A4%E6%8A%A5%E9%94%99/</loc>
     
     <lastmod>2019-03-13T02:32:01.035Z</lastmod>
@@ -492,9 +485,9 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/12/11/Deque%E5%92%8CRandomizedQueue%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>http://www.peierlong.com/2017/10/09/ElasticSearch%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</loc>
     
-    <lastmod>2019-03-13T02:32:01.034Z</lastmod>
+    <lastmod>2019-03-13T02:32:01.035Z</lastmod>
     
   </url>
   
@@ -521,6 +514,13 @@
   
   <url>
     <loc>http://www.peierlong.com/2017/04/08/Docker%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB-%E4%B8%8A/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2017/12/11/Deque%E5%92%8CRandomizedQueue%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.034Z</lastmod>
     
@@ -562,13 +562,6 @@
   </url>
   
   <url>
-    <loc>http://www.peierlong.com/2017/12/04/3-SUM%E9%97%AE%E9%A2%98%E7%9A%84%E5%B9%B3%E6%96%B9%E7%BA%A7%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2019-03-13T02:32:01.032Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.peierlong.com/2018/01/22/8Puzzle%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/</loc>
     
     <lastmod>2019-03-13T02:32:01.032Z</lastmod>
@@ -577,6 +570,13 @@
   
   <url>
     <loc>http://www.peierlong.com/2015/04/20/Android%20Studio%20Rendering%20Problems/</loc>
+    
+    <lastmod>2019-03-13T02:32:01.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.peierlong.com/2017/12/04/3-SUM%E9%97%AE%E9%A2%98%E7%9A%84%E5%B9%B3%E6%96%B9%E7%BA%A7%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-03-13T02:32:01.032Z</lastmod>
     
