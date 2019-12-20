@@ -8,6 +8,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://www.peierlong.com/sitemap.xml
-Sitemap: https://www.peierlong.com/sitemap.xml
+Sitemap: http://blog.peiel.com/sitemap.xml
+Sitemap: https://blog.peiel.com/sitemap.xml
 
