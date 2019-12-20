@@ -5,9 +5,9 @@
   <subtitle>大其愿 坚其志 虚其心 柔其气</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://peiel.github.io/"/>
+  <link href="http://blog.peiel.com/"/>
   <updated>2019-12-19T03:32:30.499Z</updated>
-  <id>http://peiel.github.io/</id>
+  <id>http://blog.peiel.com/</id>
   
   <author>
     <name>Peiel</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>GitHub图片加载不稳定解决办法</title>
-    <link href="http://peiel.github.io/2019/12/19/GitHub%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%8D%E7%A8%B3%E5%AE%9A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>http://peiel.github.io/2019/12/19/GitHub图片加载不稳定解决办法/</id>
+    <link href="http://blog.peiel.com/2019/12/19/GitHub%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%8D%E7%A8%B3%E5%AE%9A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://blog.peiel.com/2019/12/19/GitHub图片加载不稳定解决办法/</id>
     <published>2019-12-19T03:25:41.000Z</published>
     <updated>2019-12-19T03:32:30.499Z</updated>
     
@@ -35,17 +35,17 @@
     
     </summary>
     
-      <category term="GitHub" scheme="http://peiel.github.io/categories/GitHub/"/>
+      <category term="GitHub" scheme="http://blog.peiel.com/categories/GitHub/"/>
     
     
-      <category term="Git" scheme="http://peiel.github.io/tags/Git/"/>
+      <category term="Git" scheme="http://blog.peiel.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>IDEA CodeGlance插件不显示无效不起作用的解决方案</title>
-    <link href="http://peiel.github.io/2019/10/31/IDEA-CodeGlance%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%97%A0%E6%95%88%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://peiel.github.io/2019/10/31/IDEA-CodeGlance不显示无效不起作用的解决方案/</id>
+    <link href="http://blog.peiel.com/2019/10/31/IDEA-CodeGlance%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%97%A0%E6%95%88%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://blog.peiel.com/2019/10/31/IDEA-CodeGlance不显示无效不起作用的解决方案/</id>
     <published>2019-10-31T07:45:53.000Z</published>
     <updated>2019-12-19T03:33:41.271Z</updated>
     
@@ -62,14 +62,14 @@
     </summary>
     
     
-      <category term="-IDEA" scheme="http://peiel.github.io/tags/IDEA/"/>
+      <category term="-IDEA" scheme="http://blog.peiel.com/tags/IDEA/"/>
     
   </entry>
   
   <entry>
     <title>Redis RDB 持久化错误解决</title>
-    <link href="http://peiel.github.io/2019/06/25/Redis-RDB-%E6%8C%81%E4%B9%85%E5%8C%96%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/"/>
-    <id>http://peiel.github.io/2019/06/25/Redis-RDB-持久化错误解决/</id>
+    <link href="http://blog.peiel.com/2019/06/25/Redis-RDB-%E6%8C%81%E4%B9%85%E5%8C%96%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/"/>
+    <id>http://blog.peiel.com/2019/06/25/Redis-RDB-持久化错误解决/</id>
     <published>2019-06-25T12:43:30.000Z</published>
     <updated>2019-12-19T03:33:41.271Z</updated>
     
@@ -82,21 +82,21 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://peiel.github.io/categories/Redis/"/>
+      <category term="Redis" scheme="http://blog.peiel.com/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://peiel.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="http://blog.peiel.com/tags/Redis/"/>
     
-      <category term="缓存" scheme="http://peiel.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="缓存" scheme="http://blog.peiel.com/tags/%E7%BC%93%E5%AD%98/"/>
     
-      <category term="RDB" scheme="http://peiel.github.io/tags/RDB/"/>
+      <category term="RDB" scheme="http://blog.peiel.com/tags/RDB/"/>
     
   </entry>
   
   <entry>
     <title>递归的理解</title>
-    <link href="http://peiel.github.io/2019/04/12/%E9%80%92%E5%BD%92%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://peiel.github.io/2019/04/12/递归的理解/</id>
+    <link href="http://blog.peiel.com/2019/04/12/%E9%80%92%E5%BD%92%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://blog.peiel.com/2019/04/12/递归的理解/</id>
     <published>2019-04-12T12:33:17.000Z</published>
     <updated>2019-04-18T02:37:11.440Z</updated>
     
@@ -109,17 +109,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peiel.github.io/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://blog.peiel.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peiel.github.io/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://blog.peiel.com/tags/Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>《暗时间》读书笔记</title>
-    <link href="http://peiel.github.io/2019/04/11/%E3%80%8A%E6%9A%97%E6%97%B6%E9%97%B4%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://peiel.github.io/2019/04/11/《暗时间》读书笔记/</id>
+    <link href="http://blog.peiel.com/2019/04/11/%E3%80%8A%E6%9A%97%E6%97%B6%E9%97%B4%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.peiel.com/2019/04/11/《暗时间》读书笔记/</id>
     <published>2019-04-11T12:15:50.000Z</published>
     <updated>2019-04-12T02:16:30.258Z</updated>
     
@@ -131,15 +131,15 @@
     
     </summary>
     
-      <category term="读书" scheme="http://peiel.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="http://blog.peiel.com/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>Java NIO 之 FileChannel 的使用</title>
-    <link href="http://peiel.github.io/2019/03/22/Java-NIO-%E4%B9%8B-FileChannel-%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://peiel.github.io/2019/03/22/Java-NIO-之-FileChannel-的使用/</id>
+    <link href="http://blog.peiel.com/2019/03/22/Java-NIO-%E4%B9%8B-FileChannel-%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://blog.peiel.com/2019/03/22/Java-NIO-之-FileChannel-的使用/</id>
     <published>2019-03-22T13:19:11.000Z</published>
     <updated>2019-03-22T08:20:26.281Z</updated>
     
@@ -151,19 +151,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peiel.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 问题修复记录</title>
-    <link href="http://peiel.github.io/2019/03/12/hexo-problem-fix/"/>
-    <id>http://peiel.github.io/2019/03/12/hexo-problem-fix/</id>
+    <link href="http://blog.peiel.com/2019/03/12/hexo-problem-fix/"/>
+    <id>http://blog.peiel.com/2019/03/12/hexo-problem-fix/</id>
     <published>2019-03-12T13:37:52.000Z</published>
     <updated>2019-03-14T02:07:06.567Z</updated>
     
@@ -178,17 +178,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://peiel.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.peiel.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://peiel.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.peiel.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>我的书单</title>
-    <link href="http://peiel.github.io/2019/02/14/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
-    <id>http://peiel.github.io/2019/02/14/我的书单/</id>
+    <link href="http://blog.peiel.com/2019/02/14/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/"/>
+    <id>http://blog.peiel.com/2019/02/14/我的书单/</id>
     <published>2019-02-14T11:56:04.000Z</published>
     <updated>2019-03-14T02:02:22.392Z</updated>
     
@@ -203,17 +203,17 @@
     
     </summary>
     
-      <category term="读书" scheme="http://peiel.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="http://blog.peiel.com/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
-      <category term="书单" scheme="http://peiel.github.io/tags/%E4%B9%A6%E5%8D%95/"/>
+      <category term="书单" scheme="http://blog.peiel.com/tags/%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot2.x整合ES2.x报failed to load elasticsearch nodes</title>
-    <link href="http://peiel.github.io/2018/07/18/SpringBoot2.x%E6%95%B4%E5%90%88ES2.x%E6%8A%A5failed-to-load-elasticsearch-nodes/"/>
-    <id>http://peiel.github.io/2018/07/18/SpringBoot2.x整合ES2.x报failed-to-load-elasticsearch-nodes/</id>
+    <link href="http://blog.peiel.com/2018/07/18/SpringBoot2.x%E6%95%B4%E5%90%88ES2.x%E6%8A%A5failed-to-load-elasticsearch-nodes/"/>
+    <id>http://blog.peiel.com/2018/07/18/SpringBoot2.x整合ES2.x报failed-to-load-elasticsearch-nodes/</id>
     <published>2018-07-18T02:26:16.000Z</published>
     <updated>2019-03-13T02:32:01.040Z</updated>
     
@@ -225,23 +225,23 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="ES" scheme="http://peiel.github.io/tags/ES/"/>
+      <category term="Spring" scheme="http://blog.peiel.com/tags/Spring/"/>
     
-      <category term="Spring" scheme="http://peiel.github.io/tags/Spring/"/>
+      <category term="Spring Boot" scheme="http://blog.peiel.com/tags/Spring-Boot/"/>
     
-      <category term="Spring Boot" scheme="http://peiel.github.io/tags/Spring-Boot/"/>
+      <category term="ES" scheme="http://blog.peiel.com/tags/ES/"/>
     
   </entry>
   
   <entry>
     <title>HttpClient4.5.3源码浅析(HttpClient的execute方法执行过程)</title>
-    <link href="http://peiel.github.io/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/"/>
-    <id>http://peiel.github.io/2018/06/29/HttpClient4-5-3源码浅析(HttpClient的execute方法执行过程)/</id>
+    <link href="http://blog.peiel.com/2018/06/29/HttpClient4-5-3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E7%9A%84execute%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)/"/>
+    <id>http://blog.peiel.com/2018/06/29/HttpClient4-5-3源码浅析(HttpClient的execute方法执行过程)/</id>
     <published>2018-06-29T07:07:03.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -253,19 +253,19 @@
     
     </summary>
     
-      <category term="网络" scheme="http://peiel.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="http://blog.peiel.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Http" scheme="http://peiel.github.io/tags/Http/"/>
+      <category term="Http" scheme="http://blog.peiel.com/tags/Http/"/>
     
-      <category term="HttpClient" scheme="http://peiel.github.io/tags/HttpClient/"/>
+      <category term="HttpClient" scheme="http://blog.peiel.com/tags/HttpClient/"/>
     
   </entry>
   
   <entry>
     <title>HttpClient4.5.3源码浅析(HttpClient对象构造过程)</title>
-    <link href="http://peiel.github.io/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/"/>
-    <id>http://peiel.github.io/2018/06/28/HttpClient4.5.3源码浅析(HttpClient构造过程)/</id>
+    <link href="http://blog.peiel.com/2018/06/28/HttpClient4.5.3%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90(HttpClient%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B)/"/>
+    <id>http://blog.peiel.com/2018/06/28/HttpClient4.5.3源码浅析(HttpClient构造过程)/</id>
     <published>2018-06-28T08:22:27.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -277,19 +277,19 @@
     
     </summary>
     
-      <category term="网络" scheme="http://peiel.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="http://blog.peiel.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Http" scheme="http://peiel.github.io/tags/Http/"/>
+      <category term="Http" scheme="http://blog.peiel.com/tags/Http/"/>
     
-      <category term="HttpClient" scheme="http://peiel.github.io/tags/HttpClient/"/>
+      <category term="HttpClient" scheme="http://blog.peiel.com/tags/HttpClient/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot读取配置文件方法</title>
-    <link href="http://peiel.github.io/2018/06/21/Spring-Boot%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
-    <id>http://peiel.github.io/2018/06/21/Spring-Boot读取配置文件方法/</id>
+    <link href="http://blog.peiel.com/2018/06/21/Spring-Boot%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
+    <id>http://blog.peiel.com/2018/06/21/Spring-Boot读取配置文件方法/</id>
     <published>2018-06-21T06:32:50.000Z</published>
     <updated>2019-03-14T02:06:15.498Z</updated>
     
@@ -302,21 +302,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="Spring" scheme="http://peiel.github.io/tags/Spring/"/>
+      <category term="Spring" scheme="http://blog.peiel.com/tags/Spring/"/>
     
-      <category term="Spring Boot" scheme="http://peiel.github.io/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://blog.peiel.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>微信支付生成10位一天内不能重复的数字工具类</title>
-    <link href="http://peiel.github.io/2018/05/15/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%94%9F%E6%88%9010%E4%BD%8D%E4%B8%80%E5%A4%A9%E5%86%85%E4%B8%8D%E8%83%BD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    <id>http://peiel.github.io/2018/05/15/微信支付生成10位一天内不能重复的数字工具类/</id>
+    <link href="http://blog.peiel.com/2018/05/15/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%94%9F%E6%88%9010%E4%BD%8D%E4%B8%80%E5%A4%A9%E5%86%85%E4%B8%8D%E8%83%BD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>http://blog.peiel.com/2018/05/15/微信支付生成10位一天内不能重复的数字工具类/</id>
     <published>2018-05-15T08:00:15.000Z</published>
     <updated>2019-04-28T02:26:10.570Z</updated>
     
@@ -328,19 +328,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="WXPay" scheme="http://peiel.github.io/tags/WXPay/"/>
+      <category term="WXPay" scheme="http://blog.peiel.com/tags/WXPay/"/>
     
   </entry>
   
   <entry>
     <title>Java ClassLodaer 知识总结</title>
-    <link href="http://peiel.github.io/2018/03/28/Java-ClassLodaer-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    <id>http://peiel.github.io/2018/03/28/Java-ClassLodaer-知识总结/</id>
+    <link href="http://blog.peiel.com/2018/03/28/Java-ClassLodaer-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.peiel.com/2018/03/28/Java-ClassLodaer-知识总结/</id>
     <published>2018-03-28T08:46:05.000Z</published>
     <updated>2019-03-13T02:32:01.037Z</updated>
     
@@ -355,21 +355,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peiel.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
     
-      <category term="ClassLoader" scheme="http://peiel.github.io/tags/ClassLoader/"/>
+      <category term="ClassLoader" scheme="http://blog.peiel.com/tags/ClassLoader/"/>
     
   </entry>
   
   <entry>
     <title>Java字节码指令的分类</title>
-    <link href="http://peiel.github.io/2018/03/28/Java%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E7%9A%84%E5%88%86%E7%B1%BB/"/>
-    <id>http://peiel.github.io/2018/03/28/Java字节码指令的分类/</id>
+    <link href="http://blog.peiel.com/2018/03/28/Java%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E7%9A%84%E5%88%86%E7%B1%BB/"/>
+    <id>http://blog.peiel.com/2018/03/28/Java字节码指令的分类/</id>
     <published>2018-03-28T07:36:30.000Z</published>
     <updated>2019-03-13T02:32:01.037Z</updated>
     
@@ -381,19 +381,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peiel.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>阿里云文件上传Python脚本(自动复制MarkDown语法的图片至粘贴板)</title>
-    <link href="http://peiel.github.io/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/"/>
-    <id>http://peiel.github.io/2018/03/13/阿里云文件上传Python脚本-自动复制MarkDown语法的图片至粘贴板/</id>
+    <link href="http://blog.peiel.com/2018/03/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0Python%E8%84%9A%E6%9C%AC-%E8%87%AA%E5%8A%A8%E5%A4%8D%E5%88%B6MarkDown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9B%BE%E7%89%87%E8%87%B3%E7%B2%98%E8%B4%B4%E6%9D%BF/"/>
+    <id>http://blog.peiel.com/2018/03/13/阿里云文件上传Python脚本-自动复制MarkDown语法的图片至粘贴板/</id>
     <published>2018-03-13T05:07:40.000Z</published>
     <updated>2019-03-13T02:32:01.044Z</updated>
     
@@ -408,19 +408,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://peiel.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://blog.peiel.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://peiel.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://blog.peiel.com/tags/Python/"/>
     
-      <category term="aliyun" scheme="http://peiel.github.io/tags/aliyun/"/>
+      <category term="aliyun" scheme="http://blog.peiel.com/tags/aliyun/"/>
     
   </entry>
   
   <entry>
     <title>JVM垃圾收集器知识总结</title>
-    <link href="http://peiel.github.io/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    <id>http://peiel.github.io/2018/03/09/JVM垃圾收集器知识总结/</id>
+    <link href="http://blog.peiel.com/2018/03/09/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.peiel.com/2018/03/09/JVM垃圾收集器知识总结/</id>
     <published>2018-03-09T10:16:25.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -436,19 +436,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peiel.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>JVM内存模型简述</title>
-    <link href="http://peiel.github.io/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
-    <id>http://peiel.github.io/2018/03/09/JVM内存模型总结/</id>
+    <link href="http://blog.peiel.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.peiel.com/2018/03/09/JVM内存模型总结/</id>
     <published>2018-03-09T10:11:14.000Z</published>
     <updated>2019-03-13T02:32:01.036Z</updated>
     
@@ -464,19 +464,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://peiel.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://peiel.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
     
-      <category term="JVM" scheme="http://peiel.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>《Elasticsearch权威指南》读书笔记</title>
-    <link href="http://peiel.github.io/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://peiel.github.io/2018/03/06/《Elasticsearch-权威指南》读书笔记/</id>
+    <link href="http://blog.peiel.com/2018/03/06/%E3%80%8AElasticsearch-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.peiel.com/2018/03/06/《Elasticsearch-权威指南》读书笔记/</id>
     <published>2018-03-06T06:31:27.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -490,17 +490,17 @@
     
     </summary>
     
-      <category term="Elasticsearch" scheme="http://peiel.github.io/categories/Elasticsearch/"/>
+      <category term="Elasticsearch" scheme="http://blog.peiel.com/categories/Elasticsearch/"/>
     
     
-      <category term="Elasticsearch" scheme="http://peiel.github.io/tags/Elasticsearch/"/>
+      <category term="Elasticsearch" scheme="http://blog.peiel.com/tags/Elasticsearch/"/>
     
   </entry>
   
   <entry>
     <title>二叉查找树实现</title>
-    <link href="http://peiel.github.io/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://peiel.github.io/2018/02/09/二叉查找树实现/</id>
+    <link href="http://blog.peiel.com/2018/02/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://blog.peiel.com/2018/02/09/二叉查找树实现/</id>
     <published>2018-02-09T06:21:43.000Z</published>
     <updated>2019-03-13T02:32:01.041Z</updated>
     
@@ -519,10 +519,10 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="http://peiel.github.io/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="http://blog.peiel.com/categories/Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://peiel.github.io/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://blog.peiel.com/tags/Algorithms/"/>
     
   </entry>
   
