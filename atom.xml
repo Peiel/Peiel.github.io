@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.peiel.com/"/>
-  <updated>2019-12-23T15:58:43.551Z</updated>
+  <updated>2019-12-24T14:19:02.125Z</updated>
   <id>http://blog.peiel.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Stanford University CS144 1.1 总结</title>
+    <link href="http://blog.peiel.com/2019/12/24/Stanford-University-CS144-%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.peiel.com/2019/12/24/Stanford-University-CS144-总结/</id>
+    <published>2019-12-24T13:19:28.000Z</published>
+    <updated>2019-12-24T14:19:02.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>课程链接：<a href="https://lagunita.stanford.edu/courses/Engineering/Networking-SP/SelfPaced/course/" target="_blank" rel="noopener">点击进入</a></p><p>本节主要介绍的是生活中网络的应用。</p><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>基础的通讯模型，服务器A和服务器B相互之间的通讯不公用一条通道，分别用两条通道来进行单边通讯。进一步升级后，两个服务器可以共用同一条通道来进行字节流的读写，其中一方断开连接后，另一方也会收到<code>connection reset by pee</code>断开链接的消息，然后讲了几个应用场景。</p><a id="more"></a><h2 id="万维网"><a href="#万维网" class="headerlink" title="万维网"></a>万维网</h2><p>万维网中应用最广泛的是<code>HTTP</code>协议，客户端向服务端建立链接后，向服务端发送<code>GET</code>、<code>POST</code> 等命令，服务端收到请求后，对请求进行处理，并返回给客户端响应。</p><h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p>BitTorrent 是一个允许用户进行分享和交换大文本的程序，多个 <code>Clint</code> 向 <code>Tracker</code> 来请求获取<code>Clint</code>列表，这些列表统称为 <code>Swarm</code>， 然后通过<code>Clint</code>列表来和各个客户端建立连接，获取自己没有的 <code>piece</code>，通过请求 <code>pieces</code> 来进行数据下载，下载成功后，这个客户端会告诉其他的客户端自己已经拥有这个 <code>piece</code> 了。他的机制和万维网是一样的可靠双全工数据流，但是它的实现要稍微复杂一些。Clint和Tracker之间通过HTTP来进行通讯，Tracker维护着torrent文件记录着你想要下载的数据文件的一些描述信息。客户端和服务端存在着多个链接，而且各个客户端之间也会存在链接来动态的交换数据。</p><h2 id="Skype"><a href="#Skype" class="headerlink" title="Skype"></a>Skype</h2><p>Skype 是国外的一款通讯软件，类似与国内微信，这里主要的知识点是NAT网关后方的节点可以主动链接没有NAT网关节点，而其他节点无法直接链接到NAT网关后方的节点，这里引入了两个<code>Rendezvous Servers</code> 和 <code>Relays Servers</code>，<code>Rendezvous Servers</code> 帮组两端来建立链接，<br><code>Relays Servers</code> 来进行数据的中转。</p><h2 id="思考总结"><a href="#思考总结" class="headerlink" title="思考总结"></a>思考总结</h2><p>这节总得来说讲的都是一些介绍性知识，没有很大的难度也没有深入的一些讲解，相对来说通俗易懂。主要的疑问点如下：</p><ul><li>NAT网关后方的节点为何其他节点不能直接建立链接？现在大多数设备接入互联网都需要经过NAT网关吧，后续的学习可以注意思考通这个问题。</li></ul><hr><blockquote><p>待加入配图</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;课程链接：&lt;a href=&quot;https://lagunita.stanford.edu/courses/Engineering/Networking-SP/SelfPaced/course/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击进入&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本节主要介绍的是生活中网络的应用。&lt;/p&gt;
+&lt;h2 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h2&gt;&lt;p&gt;基础的通讯模型，服务器A和服务器B相互之间的通讯不公用一条通道，分别用两条通道来进行单边通讯。进一步升级后，两个服务器可以共用同一条通道来进行字节流的读写，其中一方断开连接后，另一方也会收到&lt;code&gt;connection reset by pee&lt;/code&gt;断开链接的消息，然后讲了几个应用场景。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Stanford" scheme="http://blog.peiel.com/tags/Stanford/"/>
+    
+      <category term="Network" scheme="http://blog.peiel.com/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Two Sum 最优解的解读</title>
     <link href="http://blog.peiel.com/2019/12/23/Two-Sum-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E8%A7%A3%E8%AF%BB/"/>
     <id>http://blog.peiel.com/2019/12/23/Two-Sum-最优解的解读/</id>
     <published>2019-12-23T15:24:28.000Z</published>
-    <updated>2019-12-23T15:58:43.551Z</updated>
+    <updated>2019-12-23T16:01:43.148Z</updated>
     
     <content type="html"><![CDATA[<p>LeetCode 上 Two Sum 问题，自己能想到的是双循环的暴力解决法和使用单 Hash Table 来解决。看到有大神写的代码TestCase跑时间消耗为0ms，拜读分析一下。</p><a id="more"></a><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>代码如下:（ <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">点击在LeetCode答案分析中时间消耗排行中查找</a>）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">int</span> mod = <span class="number">2048</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2048</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> key = target - nums[i] &amp; mod;</span><br><span class="line">        <span class="keyword">if</span>(map[key] != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span>[] ret = &#123;map[key]-<span class="number">1</span>, i&#125;;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        map[nums[i]&amp;mod] = i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"no two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>简单分析一下，主要有以下要点：</p><ul><li>创建了一个2048长度的槽（数组）</li><li>对目标值和查找值进行按位与运算得到一个索引值</li><li>根据索引值对应的槽来查找是否是符合</li><li>如果不符合的下标值，就把当前值按位与计算找到槽，把槽中的值加一。</li></ul><h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><ul><li>为什么槽的长度定义在2048？</li><li>2048个槽理论上来讲会存在碰撞问题，碰撞可能出现，出现后会误判。（可是没举出碰撞出现问题的例子来）</li><li>如何基于时间复杂度分析，来分析为什么这个算法运行快？</li></ul><p>写的有错误的地方欢迎指出，也欢迎留言一起讨论。</p>]]></content>
     
@@ -485,34 +509,6 @@
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;一、垃圾收集算法&quot;&gt;&lt;a href=&quot;#一、垃圾收集算法&quot; class=&quot;headerlink&quot; title=&quot;一、垃圾收集算法&quot;&gt;&lt;/a&gt;一、垃圾收集算法&lt;/h1&gt;&lt;p&gt;有关垃圾收集算法，有一个国外的大神用JS生成的动图直观的展示了垃圾回收的过程，有助于对垃圾收集算法的理解，这是文章&lt;a href=&quot;https://spin.atomicobject.com/2014/09/03/visualizing-garbage-collection-algorithms/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;连接&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&quot;无垃圾回收-NO-GC&quot;&gt;&lt;a href=&quot;#无垃圾回收-NO-GC&quot; class=&quot;headerlink&quot; title=&quot;无垃圾回收(NO-GC)&quot;&gt;&lt;/a&gt;无垃圾回收(NO-GC)&lt;/h2&gt;&lt;p&gt;在程序运行结束后，一次性的对内存进行回收，是最简单的回收机制。其并发性能最高，如果能把任务的颗粒度变得更细，可以有效的清理垃圾。最大的缺点是对长时间运行的程序或者占用内存大的程序来说，非常容易内存溢出。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://blog.peiel.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://blog.peiel.com/tags/Java/"/>
-    
-      <category term="JVM" scheme="http://blog.peiel.com/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JVM内存模型简述</title>
-    <link href="http://blog.peiel.com/2018/03/09/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
-    <id>http://blog.peiel.com/2018/03/09/JVM内存模型总结/</id>
-    <published>2018-03-09T10:11:14.000Z</published>
-    <updated>2019-03-13T02:32:01.036Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本文大部分的知识来自于周志明大神的<a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机（第2版）》</a>一书，系统学习JVM相关知识的强烈推荐。 </p></blockquote><p>Java内存区域概括性的来讲，分为线程独占的虚拟机栈(VM Stack)、本地方法栈(Native Method Stack)、程序计数器(Programer Counter Register)和线程共享的方法区(Method Area)、堆(Heap)。</p><p><img src="http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/Xnip2018-03-71_15-54-12.jpg" alt="Xnip2018-03-71_15-54-12"></p><a id="more"></a><h1 id="一、线程独占区域"><a href="#一、线程独占区域" class="headerlink" title="一、线程独占区域"></a>一、线程独占区域</h1><h2 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h2><p>程序计数器是一块较小的内存区域，每一个线程都会分配一个程序计数器，用来存储当前所致行的字节码的行号，程序的执行、跳转、循环、异常处理都需要这个计数器来完成。它的生命周期和线程相同。</p><h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2><p>和程序计数器一样，虚拟机栈也是线程独占的，生命周期和线程相同，虚拟机栈描述的是Java方法执行的内存模型：每个方法执行的同时都会创建一个栈帧（Stack Frame）用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p><p>每一个方法从调用到执行完成的过程，对应着一次入栈和出栈的过程。</p><h3 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h3><p>局部变量表中存储着编译器可知的基本数据类型、对象引用和returnAddress类型(指向一条字节码指令的地址)。</p><p>局部变量表的大小表示为局部变量空间(Slot)，64位长度的double和long占用两个Slot，其余占用一个。</p><h2 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h2><p>本地方法栈和虚拟机栈的作用类似，本地方法栈为虚拟机使用到的Native方法服务，虚拟机规范没有明确规范此区域，Sun HotSpot直接把本地方法栈和虚拟机栈合二为一。</p><h1 id="二、线程共享区域"><a href="#二、线程共享区域" class="headerlink" title="二、线程共享区域"></a>二、线程共享区域</h1><h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2><p>方法区是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息，常量，静态变量，即时编译器编译后的代码等数据。</p><p>HotSpot虚拟机中，方法区也称为”永久代(Permanent Generation)”。</p><h2 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h2><p>运行时常量池是方法区的一部分，用于存放编译期间生成的各种字面量和符号引用，类加载后进入方法区的运行时常量池中存放。</p><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆是Java虚拟机内存模型中最大的一块线程共享的区域，此内存区域的唯一作用就是存放对象实例。</p><p>Java堆是垃圾收集器管理的主要区域，也称为”GC堆”。使用分代收集算法，分为新生代和老年代。从内存分配的角度看，Java堆可能划分出多个线程私有的分配缓冲区(Thread Local Allocation Buffer, TLAB)。</p><hr><p>以上，Java内存模型简述完毕，上一张总结的思维导图。</p><p><img src="http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/WechatIMG178.jpeg" alt="WechatIMG178.jpeg"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本文大部分的知识来自于周志明大神的&lt;a href=&quot;https://book.douban.com/subject/24722612/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《深入理解Java虚拟机（第2版）》&lt;/a&gt;一书，系统学习JVM相关知识的强烈推荐。 &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Java内存区域概括性的来讲，分为线程独占的虚拟机栈(VM Stack)、本地方法栈(Native Method Stack)、程序计数器(Programer Counter Register)和线程共享的方法区(Method Area)、堆(Heap)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/Xnip2018-03-71_15-54-12.jpg&quot; alt=&quot;Xnip2018-03-71_15-54-12&quot;&gt;&lt;/p&gt;
     
     </summary>
     
