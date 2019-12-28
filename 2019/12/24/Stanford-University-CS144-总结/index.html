@@ -31,7 +31,7 @@
 <p>提供了两种方案：</p>
 <p>第一种：使用普通的网络协议下载，用户按顺序一轮一轮的下载，通过计算需要100轮，每轮1000个用户下载完成，大约需要耗时100,000秒（~28H）。</p>
 <p>第二种：使用 <code>peer-to-peer</code>（称点对点、对等网络）来进行分发下载，第一轮1000个用户下载，第二轮1000个用户通过服务器下载，1000个用户通过其他用户来下载，第三轮1000个用户通过服务器下载，2000个用户通过其他用户来下载，以此类推。。。</p>
-<p>问：知道最后一个用户更新完毕第二种方式耗时多少？第一个方式比第二种方式快多少倍？</p>
+<p>问：直到最后一个用户更新完毕第二种方式耗是多少？第一个方式比第二种方式快多少倍？</p>
 <h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><p>已知第一种方式耗时100,000秒。然后计算第二种方式的耗时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">单轮下载用户： 1000	1000	1000	1000	1000	1000	1000</span><br><span class="line">			1000	3000	7000	15000	31000	630000</span><br><span class="line"></span><br><span class="line">累计下载量：  1000    3000	7000	15000	31000	63000	127000</span><br></pre></td></tr></table></figure></p>
 <p>看到需要7轮全部用户即可更新完毕，耗时 <code>7 * 1000 = 7000</code>秒。<br>第二种比第一种快了约 <code>100000 / 7000 ≈ 14</code>倍。</p>
 <h2 id="思考总结"><a href="#思考总结" class="headerlink" title="思考总结"></a>思考总结</h2><p>这节总得来说讲的都是一些介绍性知识，没有很大的难度也没有深入的一些讲解，相对来说通俗易懂。主要的疑问点如下：</p>
