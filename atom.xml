@@ -123,7 +123,7 @@
     <link href="http://blog.peiel.com/2019/10/31/IDEA-CodeGlance%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%97%A0%E6%95%88%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://blog.peiel.com/2019/10/31/IDEA-CodeGlance不显示无效不起作用的解决方案/</id>
     <published>2019-10-31T07:45:53.000Z</published>
-    <updated>2019-12-19T03:33:41.271Z</updated>
+    <updated>2019-12-30T09:58:48.416Z</updated>
     
     <content type="html"><![CDATA[<ol><li>首先查看是否安装成功，并且插件处于开启状态。</li><li>使用快捷键 <code>ctrl + shift + G</code> 或者 <code>cmd + shift + G</code>，查看是否有效果。</li><li>如果还不行，点击菜单 <code>IntelliJ IDEA &gt; Preferences</code> ，<code>Other Settings &gt; CodeGlance</code>，把其中 <code>Disabled</code> 选项对勾去掉。如下图。</li></ol><a id="more"></a><p><img src="http://peierlong-blog.oss-cn-hongkong.aliyuncs.com/OLYEiP.jpg" alt="CodeGlance"></p>]]></content>
     
@@ -138,7 +138,7 @@
     </summary>
     
     
-      <category term="-IDEA" scheme="http://blog.peiel.com/tags/IDEA/"/>
+      <category term="IDEA" scheme="http://blog.peiel.com/tags/IDEA/"/>
     
   </entry>
   
